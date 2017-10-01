@@ -12,8 +12,8 @@
             <template slot="title"><i class="el-icon-setting"></i>权限</template>
             <el-menu-item-group>
               <template slot="title">权限列表</template>
-              <el-menu-item index="permissionsList">选项1</el-menu-item>
-              <el-menu-item index="user">选项2</el-menu-item>
+              <el-menu-item index="/permissionsList/index">选项1</el-menu-item>
+              <el-menu-item index="/user/index">选项2</el-menu-item>
             </el-menu-item-group>
             <el-menu-item-group title="用户列表">
               <el-menu-item index="1-3">选项3</el-menu-item>
