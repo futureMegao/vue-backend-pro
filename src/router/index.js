@@ -16,7 +16,7 @@ export default new Router({
       name:'权限列表',
       component: permissionsList,
       children: [
-        { path: 'index', component: permissionsList,name:'列表1' },
+        { path: 'index', component: permissionsList,name:'权限列表-1' },
       ]
     },
     {
@@ -26,7 +26,7 @@ export default new Router({
       children: [
         // 当 /user/:id 匹配成功，
         // UserHome 会被渲染在 User 的 <router-view> 中
-        { path: 'index', component: user,name:'列表1' },
+        { path: 'index', component: user,name:'用户列表-1' },
 
         // ...其他子路由
       ]

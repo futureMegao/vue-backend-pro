@@ -26,8 +26,20 @@
   background-color:#eef1f6;
 }
 
-.right-banner-breadcrumb{
+.right-banner-item{
+  float:left;
   height:50px;
   line-height:50px;
   margin-left:15px;
+}
+
+.right-banner-breadcrumb{
+
+}
+
+
+.right-banner-tag{
+  margin:0 auto;
+  margin-left:5px;
+  cursor:pointer;
 }
