@@ -1,37 +1,13 @@
 <template>
     <div id="app">
 
-        <div class="top-banner"></div>
-        <div>
-            <div class="left-bar-menu">
-                <el-menu router default-active="2" theme="dark" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose">
-                    <el-menu-item index="/intro"><i class="el-icon-star-off"></i>简述</el-menu-item>
-                    <el-submenu index="1">
-                        <template slot="title"><i class="el-icon-setting"></i>权限</template>
-                        <el-menu-item-group>
-                            <template slot="title">权限列表</template>
-                            <el-menu-item index="/permissionsList/index">选项1</el-menu-item>
-                            <el-menu-item index="sasa">选项2</el-menu-item>
-                        </el-menu-item-group>
-                        <el-menu-item-group title="用户列表">
-                            <el-menu-item index="/user/index">选项1</el-menu-item>
-                        </el-menu-item-group>
-                        <el-submenu index="1-4">
-                            <template slot="title">选项4</template>
-                            <el-menu-item index="1-4-1">选项1</el-menu-item>
-                        </el-submenu>
-                    </el-submenu>
+        <div class="header"></div>
 
-                    <el-menu-item index="3"><i class="el-icon-setting"></i>导航三</el-menu-item>
-                </el-menu>
+        <!--左侧菜单-->
+        <left-bar></left-bar>
 
-            </div>
-            <div class="breadcrumb">
-                <el-breadcrumb separator="/">
-                    <el-breadcrumb-item v-for="item in crumbs" :to="{ path: item.path }">{{item.name}}</el-breadcrumb-item>
-                </el-breadcrumb>
-            </div>
-        </div>
+        <!--右側banner-->
+        <right-banner></right-banner>
 
         <router-view></router-view>
     </div>
@@ -39,44 +15,52 @@
 
 <script>
 
-    import { mapState, mapActions } from 'vuex'
+    import {mapState, mapActions} from 'vuex'
+
+    import leftBar from './LeftBar.vue'
+    import rightBanner from './RightBanner.vue'
 
     export default {
         name : 'app',
+        components : {leftBar, rightBanner},
         data(){
-            return {
-                crumbs : []
-            }
+            return {}
         },
         methods : {
             ...mapActions({
-                setHistoryTabs: 'setHistoryTabs'
+                setCrumbsInfo : 'setCrumbsInfo',
+                setHistoryTabs : 'setHistoryTabs'
             }),
 
-            handleOpen(key, keyPath) {
-                console.log(key, keyPath);
-            },
-            handleClose(key, keyPath) {
-                console.log(key, keyPath);
-            },
+            // 添加历史记录
+            addHistoryTab(tabInfo){
 
+                // 简介不添加到历史记录
+                if(tabInfo.path !== '/intro'){
+
+                    this.setHistoryTabs(tabInfo);
+                }
+            }
 
         },
         watch : {
 
             $route(to, from){
 
-                this.crumbs = [];
+                let crumbs = [];
 
                 to.matched.forEach((item) =>{
 
-                    this.crumbs.push({name : item.name, path : item.path});
+                    crumbs.push({name : item.name, path : item.path});
                 })
 
-                if (this.crumbs.length > 0){
+                if(crumbs.length > 0){
+
+                    // 设置面包屑信息
+                    this.setCrumbsInfo(crumbs);
 
                     // 设置历史记录
-                    this.setHistoryTabs(this.crumbs[this.crumbs.length -1])
+                    this.addHistoryTab(crumbs[crumbs.length - 1])
                 }
             }
         }

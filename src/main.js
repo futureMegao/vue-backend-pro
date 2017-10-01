@@ -8,7 +8,7 @@ import './css/index.css'
 import './css/custome.css'
 
 
-import {Menu, Submenu, MenuItem, MenuItemGroup, Breadcrumb, BreadcrumbItem} from 'element-ui'
+import {Menu, Submenu, MenuItem, MenuItemGroup, Breadcrumb, BreadcrumbItem,Tag} from 'element-ui'
 
 Vue.component(Menu.name, Menu)
 Vue.component(Submenu.name, Submenu)
@@ -16,6 +16,7 @@ Vue.component(MenuItem.name, MenuItem)
 Vue.component(MenuItemGroup.name, MenuItemGroup)
 Vue.component(Breadcrumb.name, Breadcrumb)
 Vue.component(BreadcrumbItem.name, BreadcrumbItem)
+Vue.component(Tag.name, Tag)
 
 
 import store from './store/index.js'

@@ -22,7 +22,7 @@ export default new Router({
     {
       path: '/user',
       name:'用户列表',
-      // component: user,
+      component: user,
       children: [
         // 当 /user/:id 匹配成功，
         // UserHome 会被渲染在 User 的 <router-view> 中
