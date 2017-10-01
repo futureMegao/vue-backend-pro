@@ -27,9 +27,9 @@
 
       </div>
       <div class="breadcrumb">
-        <ul>
-          <li @click="linkTo(item.path)" v-for="item in crumbs" >{{item.name}}</li>
-        </ul>
+        <el-breadcrumb separator="/">
+          <el-breadcrumb-item v-for="item in crumbs" :to="{ path: item.path }">{{item.name}}</el-breadcrumb-item>
+        </el-breadcrumb>
       </div>
     </div>
 
