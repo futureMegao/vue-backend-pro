@@ -8,7 +8,7 @@ import './css/index.css'
 import './css/custome.css'
 
 
-import { Menu, Submenu,MenuItem ,MenuItemGroup,Breadcrumb,BreadcrumbItem } from 'element-ui'
+import {Menu, Submenu, MenuItem, MenuItemGroup, Breadcrumb, BreadcrumbItem} from 'element-ui'
 
 Vue.component(Menu.name, Menu)
 Vue.component(Submenu.name, Submenu)
@@ -18,19 +18,18 @@ Vue.component(Breadcrumb.name, Breadcrumb)
 Vue.component(BreadcrumbItem.name, BreadcrumbItem)
 
 
-
-
 import store from './store/index.js'
 
-/*import axios from 'axios'
-Vue.prototype.$axios = axios*/
+import axios from 'axios'
+Vue.prototype.$axios = axios
 
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
-  router,
-  template: '<App/>',
-  components: { App }
+    el : '#app',
+    store,
+    router,
+    template : '<App/>',
+    components : {App}
 })
