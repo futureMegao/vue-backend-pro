@@ -66,16 +66,10 @@
 
         to.matched.forEach((item) =>{
 
-
           this.crumbs.push({name : item.name, path : item.path});
-          /*this.crumbs += item.name + '/';*/
-          console.log(item)
+
         })
-
-        console.log(to);
-
       }
-
     }
   }
 </script>
