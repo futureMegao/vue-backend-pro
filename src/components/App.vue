@@ -38,6 +38,9 @@
 </template>
 
 <script>
+
+    import { mapState, mapActions } from 'vuex'
+
     export default {
         name : 'app',
         data(){
@@ -46,6 +49,10 @@
             }
         },
         methods : {
+            ...mapActions({
+                setHistoryTabs: 'setHistoryTabs'
+            }),
+
             handleOpen(key, keyPath) {
                 console.log(key, keyPath);
             },
@@ -53,10 +60,7 @@
                 console.log(key, keyPath);
             },
 
-            linkTo(path){
 
-                this.$router.replace({path : path});
-            }
         },
         watch : {
 
@@ -67,8 +71,13 @@
                 to.matched.forEach((item) =>{
 
                     this.crumbs.push({name : item.name, path : item.path});
-
                 })
+
+                if (this.crumbs.length > 0){
+
+                    // 设置历史记录
+                    this.setHistoryTabs(this.crumbs[this.crumbs.length -1])
+                }
             }
         }
     }

@@ -5,6 +5,7 @@ import actions from "./actions";
 import mutations from "./mutations";
 import state from './state'
 
+import createLogger from "../../devtool/vue/plugins/logger";
 
 // user
 import user from './modules/user.js';
@@ -19,9 +20,10 @@ export default new Vuex.Store({
     getters,
     actions,
     mutations,
-    modules: {
-      user,
-      permissionsList
+    modules : {
+        user,
+        permissionsList
     },
-    strict: true
+    plugins : [createLogger()],
+    strict : true
 });

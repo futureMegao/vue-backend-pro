@@ -9,7 +9,7 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
-    { path: '/',name:'user',redirect: '/intro'}, // 默认路由
+    { path: '/',name:'简述',redirect: '/intro'}, // 默认路由
     { path: '/intro',name:'简述',component: intro},
     {
       path: '/permissionsList',
