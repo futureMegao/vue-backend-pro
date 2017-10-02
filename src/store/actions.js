@@ -13,6 +13,7 @@ export default {
     setCrumbsInfo : function(context, payLoad){
 
         context.commit(types.SET_CRUMBS_Info, payLoad);
+
     },
 
 }

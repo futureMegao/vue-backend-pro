@@ -23,15 +23,15 @@
 
             ...mapState({
                 crumbsInfo : state => state.root.crumbsInfo,
-                historyTabs: state => state.root.historyTabs,
-            }),
+                historyTabs : state => state.root.historyTabs,
+            })
         },
 
-        methods:{
+        methods : {
 
             linkTo(path){
 
-                this.$router.replace({path:path});
+                this.$router.replace({path : path});
             }
 
         }

@@ -6,7 +6,7 @@
         <!--左侧菜单-->
         <left-bar></left-bar>
 
-        <!--右側banner-->
+        <!--右侧banner-->
         <right-banner></right-banner>
 
         <router-view></router-view>

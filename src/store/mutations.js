@@ -22,7 +22,7 @@ export default {
             }
         })
 
-        // 如果存在相同的历史记录则不添加
+        // 如果不存在相同的历史记录则添加
         if(!isExitTab){
 
             tempTabs.push({name : payload.name, path : payload.path, colorType : 'primary'});
@@ -35,6 +35,6 @@ export default {
     [types.SET_CRUMBS_Info] (state, payload) {
 
         state.root.crumbsInfo = payload;
-    },
+    }
 }
 

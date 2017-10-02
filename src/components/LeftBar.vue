@@ -36,6 +36,6 @@
                 console.log(key, keyPath);
             }
 
-        },
+        }
     }
 </script>
