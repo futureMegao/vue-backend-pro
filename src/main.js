@@ -8,7 +8,7 @@ import './css/index.css'
 import './css/custome.css'
 
 
-import {Menu, Submenu, MenuItem, MenuItemGroup, Breadcrumb, BreadcrumbItem,Tag,radioButton,radioGroup} from 'element-ui'
+import {Menu, Submenu, MenuItem, MenuItemGroup, Breadcrumb, BreadcrumbItem,Tag,radioButton,radioGroup,tooltip} from 'element-ui'
 
 Vue.component(Menu.name, Menu)
 Vue.component(Submenu.name, Submenu)
@@ -19,6 +19,7 @@ Vue.component(BreadcrumbItem.name, BreadcrumbItem)
 Vue.component(Tag.name, Tag)
 Vue.component(radioButton.name, radioButton)
 Vue.component(radioGroup.name, radioGroup)
+Vue.component(tooltip.name, tooltip)
 
 
 
