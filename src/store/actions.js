@@ -16,4 +16,10 @@ export default {
 
     },
 
+    //设置删除历史记录tabs
+    deleteHistoryTabs:function(context,payload){
+
+        context.commit(types.DELETE_HISTORY_TABS,payload);
+    }
+
 }

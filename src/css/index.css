@@ -12,14 +12,14 @@
 */
 
 .left-bar-menu{
-  width:18%;
+  /*width:18%;*/
   float:left;
-  height:calc(100vh - 70px);
+  height:calc(100vh);
   background-color:#324157;
 }
 
 .right-banner{
-  width:82%;
+  width:90%;
  /* height:50px;
   line-height:50px;*/
   float:left;
@@ -42,4 +42,9 @@
   margin:0 auto;
   margin-left:5px;
   cursor:pointer;
+}
+.fixed {
+  position:fixed;
+  top:0;
+  left:300px;
 }

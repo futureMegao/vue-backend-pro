@@ -6,7 +6,14 @@
         </el-breadcrumb>
 
         <div class="right-banner-item">
-            <el-tag @click.native="linkTo(item.path)" v-for="item in historyTabs" closable class="right-banner-tag" :type="item.colorType">{{item.name}}</el-tag>
+            <el-tag
+            @click.native="linkTo(item.path)"
+            v-for="item in historyTabs"
+            closable class="right-banner-tag"
+            @close="handleClose(item)"
+            :type="item.colorType">
+                {{item.name}}
+            </el-tag>
         </div>
 
 
@@ -28,10 +35,15 @@
         },
 
         methods : {
-
+            ...mapActions({
+                deleteHistoryTabs:'deleteHistoryTabs'
+            }),
             linkTo(path){
-
                 this.$router.replace({path : path});
+            },
+            //删除历史记录tabs
+            handleClose(item){
+                this.deleteHistoryTabs(item)
             }
 
         }

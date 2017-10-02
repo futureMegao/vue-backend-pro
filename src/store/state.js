@@ -8,5 +8,4 @@ export default {
         // 面包屑信息
         crumbsInfo:[]
     }
-
 }

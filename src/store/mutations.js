@@ -31,6 +31,14 @@ export default {
         state.root.historyTabs = tempTabs;
     },
 
+    // 删除 tabs
+    [types.DELETE_HISTORY_TABS](state,payload){
+
+        let index = state.root.historyTabs.findIndex(x=>x.path === payload.path);
+
+        state.root.historyTabs.splice(index,1);
+    },
+
     // 设置面包屑信息
     [types.SET_CRUMBS_Info] (state, payload) {
 
