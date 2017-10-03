@@ -4,12 +4,15 @@
         <div class="header"></div>
 
         <!--左侧菜单-->
-        <left-bar></left-bar>
+        <left-bar style="overflow:hidden"></left-bar>
 
         <!--右侧banner-->
-        <right-banner></right-banner>
+        <div style="overflow:hidden">
+            <right-banner></right-banner>
 
-        <router-view></router-view>
+            <router-view></router-view>
+        </div>
+
     </div>
 </template>
 

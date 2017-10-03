@@ -7,10 +7,13 @@ import state from './state'
 
 import createLogger from "../../devtool/vue/plugins/logger";
 
-// user
+// user  用户
 import user from './modules/user.js';
 // permissionsList
 import permissionsList from './modules/permissionsList.js';
+//accountManagement  账号管理
+import accountManagement from './modules/accountManagement.js';
+
 
 // 将vuex注入到实例中
 Vue.use(Vuex);
@@ -22,7 +25,9 @@ export default new Vuex.Store({
     mutations,
     modules : {
         user,
-        permissionsList
+        permissionsList,
+        accountManagement
+
     },
     plugins : [createLogger()],
     strict : true

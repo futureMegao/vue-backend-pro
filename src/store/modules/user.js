@@ -1,43 +1,46 @@
+import axios from 'axios'
+
 let types = {
-  // 获取用户数据
-  GET_USER_INFO:'getUserInfo'
+    // 获取用户数据
+    GET_USER_INFO : 'getUserInfo'
 }
 
 const state = {
 
-  // 用户数据
-  userInfo:[]
+    // 用户数据
+    userInfo : []
 }
 
 const actions = {
-  // 获取用户数据
-  [types.GET_USER_INFO](context, payLoad){
+    // 获取用户数据
+    getUserInfo(context, payLoad){
 
-      // 此处为 ajax 请求
-      context.commit(types.GET_USER_INFO, payLoad)
-  },
-
+        axios.get('../static/userList.json')
+            .then((res) =>{
+                context.commit(types.GET_USER_INFO, res.data)
+            })
+    }
 
 }
 
 const mutations = {
 
-  // 获取用户数据
-  [types.GET_USER_INFO](state, payLoad) {
+    // 获取用户数据
+    [types.GET_USER_INFO](state, {data}) {
 
-    if (payLoad){
+        if(Array.isArray(data) && data.length > 0){
 
-      state.userInfo = payLoad;
-    }
-  },
+            state.userInfo = data;
+        }
+    },
 
 
 }
 const getters = {}
 export default {
-  namespaced: true,
-  state,
-  actions,
-  mutations,
-  getters
+    namespaced : true,
+    state,
+    actions,
+    mutations,
+    getters
 }

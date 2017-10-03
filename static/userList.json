@@ -1,0 +1,127 @@
+{
+  "data":[
+    {
+      "date" : "2016-05-02",
+      "name" : "王小虎",
+      "address" : "上海市普陀区金沙江路 1518 弄"
+    },
+    {
+      "date" : "2016-05-02",
+      "name" : "王小虎",
+      "address" : "上海市普陀区金沙江路 1518 弄"
+    },
+    {
+      "date" : "2016-05-02",
+      "name" : "王小虎",
+      "address" : "上海市普陀区金沙江路 1518 弄"
+    },
+    {
+      "date" : "2016-05-02",
+      "name" : "王小虎",
+      "address" : "上海市普陀区金沙江路 1518 弄"
+    },
+    {
+      "date" : "2016-05-02",
+      "name" : "王小虎",
+      "address" : "上海市普陀区金沙江路 1518 弄"
+    },
+    {
+      "date" : "2016-05-02",
+      "name" : "王小虎",
+      "address" : "上海市普陀区金沙江路 1518 弄"
+    }
+  ],
+  "accountManagement":[
+    {
+      "id":"201701",
+      "user":"gaohanwei1",
+      "realName":"XXX",
+      "section":"人力资源",
+      "role":"普通管理员",
+      "state":"可用",
+      "joinDate":"2017-01-01"
+    },
+    {
+      "id":"201701",
+      "user":"gaohanwei1",
+      "realName":"XXX",
+      "section":"人力资源",
+      "role":"普通管理员",
+      "state":"可用",
+      "joinDate":"2017-01-01"
+    },
+    {
+      "id":"201701",
+      "user":"gaohanwei1",
+      "realName":"XXX",
+      "section":"人力资源",
+      "role":"普通管理员",
+      "state":"可用",
+      "joinDate":"2017-01-01"
+    },
+    {
+      "id":"201701",
+      "user":"gaohanwei1",
+      "realName":"XXX",
+      "section":"人力资源",
+      "role":"普通管理员",
+      "state":"可用",
+      "joinDate":"2017-01-01"
+    },
+    {
+      "id":"201701",
+      "user":"gaohanwei1",
+      "realName":"XXX",
+      "section":"人力资源",
+      "role":"普通管理员",
+      "state":"可用",
+      "joinDate":"2017-01-01"
+    },
+    {
+      "id":"201701",
+      "user":"gaohanwei1",
+      "realName":"XXX",
+      "section":"人力资源",
+      "role":"普通管理员",
+      "state":"可用",
+      "joinDate":"2017-01-01"
+    },
+    {
+      "id":"201701",
+      "user":"gaohanwei1",
+      "realName":"XXX",
+      "section":"人力资源",
+      "role":"普通管理员",
+      "state":"可用",
+      "joinDate":"2017-01-01"
+    },
+    {
+      "id":"201701",
+      "user":"gaohanwei1",
+      "realName":"XXX",
+      "section":"人力资源",
+      "role":"普通管理员",
+      "state":"可用",
+      "joinDate":"2017-01-01"
+    },
+    {
+      "id":"201701",
+      "user":"gaohanwei1",
+      "realName":"XXX",
+      "section":"人力资源",
+      "role":"普通管理员",
+      "state":"可用",
+      "joinDate":"2017-01-01"
+    },
+    {
+      "id":"201701",
+      "user":"gaohanwei1",
+      "realName":"XXX",
+      "section":"人力资源",
+      "role":"普通管理员",
+      "state":"可用",
+      "joinDate":"2017-01-01"
+    }
+  ]
+  
+}

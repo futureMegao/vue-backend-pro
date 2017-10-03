@@ -8,7 +8,7 @@ import './css/index.css'
 import './css/custome.css'
 
 
-import {Menu, Submenu, MenuItem, MenuItemGroup, Breadcrumb, BreadcrumbItem,Tag,radioButton,radioGroup,tooltip} from 'element-ui'
+import {Menu, Submenu, MenuItem, MenuItemGroup, Breadcrumb, BreadcrumbItem,Tag,radioButton,radioGroup,tooltip,tableColumn,table,button,input} from 'element-ui'
 
 Vue.component(Menu.name, Menu)
 Vue.component(Submenu.name, Submenu)
@@ -20,13 +20,17 @@ Vue.component(Tag.name, Tag)
 Vue.component(radioButton.name, radioButton)
 Vue.component(radioGroup.name, radioGroup)
 Vue.component(tooltip.name, tooltip)
+Vue.component(tableColumn.name, tableColumn)
+Vue.component(table.name, table)
+Vue.component(button.name, button)
+Vue.component(input.name, input)
 
 
 
 import store from './store/index.js'
 
 import axios from 'axios'
-Vue.prototype.$axios = axios
+Vue.prototype.$ajax = axios
 
 Vue.config.productionTip = false
 
