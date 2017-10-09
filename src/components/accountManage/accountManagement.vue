@@ -1,5 +1,6 @@
 <template>
     <div>
+        <router-view></router-view>
         <div class="accountMangement-nav clearFix">
             <div class="accountMangement-nav-left">
                 <el-button type="primary" icon="edit" @click="addAccount">添加</el-button>

@@ -1,23 +1,24 @@
 <template>
 
-    <div class="right-banner">
-        <el-breadcrumb class="right-banner-breadcrumb right-banner-item" separator="/">
-            <el-breadcrumb-item v-for="item in crumbsInfo" :to="{ path: item.path }">{{item.name}}</el-breadcrumb-item>
-        </el-breadcrumb>
+   <div class="clearFix">
+       <div class="right-banner clearFix">
+           <el-breadcrumb class="right-banner-breadcrumb right-banner-item" separator="/">
+               <el-breadcrumb-item v-for="item in crumbsInfo" :to="{ path: item.path }">{{item.name}}</el-breadcrumb-item>
+           </el-breadcrumb>
 
-        <div class="right-banner-item">
-            <el-tag
-            @click.native="linkTo(item.path)"
-            v-for="item in historyTabs"
-            closable class="right-banner-tag"
-            @close="handleClose(item)"
-            :type="item.colorType">
-                {{item.name}}
-            </el-tag>
-        </div>
-
-
-    </div>
+           <div class="right-banner-item">
+               <el-tag
+                       @click.native="linkTo(item.path)"
+                       v-for="item in historyTabs"
+                       closable class="right-banner-tag"
+                       @close="handleClose(item)"
+                       :type="item.colorType">
+                   {{item.name}}
+               </el-tag>
+           </div>
+       </div>
+       <!--<router-view></router-view>-->
+   </div>
 </template>
 <script>
 

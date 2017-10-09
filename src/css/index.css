@@ -73,3 +73,32 @@
 .accountMangement-nav {
   background-color:#20a0ff;
 }
+.addAccount-nav {
+  width:95%;
+  padding:0 2.5%;
+}
+.dashed {
+  width:100%;
+  height:2px;
+  background-color:#20a0ff;
+  margin-bottom:10px;
+}
+.addAccount-input {
+  width:200px;
+}
+.addAccount-list {
+  width:30%;
+  float:left;
+  margin-right:5%;
+  margin-bottom:20px;
+  margin-left:100px;
+  margin-top:20px;
+}
+.addAccount-list span {
+  display:inline-block;
+  width:80px;
+}
+.present {
+  margin-left:100px;
+}
+

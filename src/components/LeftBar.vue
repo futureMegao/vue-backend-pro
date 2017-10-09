@@ -6,10 +6,10 @@
                 <template slot="title"><i class="el-icon-setting"></i>系统管理</template>
                 <el-submenu index="1-1">
                     <template slot="title">账号管理</template>
-                    <el-menu-item index="/accountManagement/accountManagement">账号管理</el-menu-item>
-                    <el-menu-item index="/accountManagement/addAccount">新增账号</el-menu-item>
-                    <el-menu-item index="/accountManagement/roleManagement">角色管理</el-menu-item>
-                    <el-menu-item index="/accountManagement/addRoles">新增角色</el-menu-item>
+                    <el-menu-item index="/accountManagements/accountManagement">账号管理</el-menu-item>
+                    <el-menu-item index="/accountManagements/addAccount">新增账号</el-menu-item>
+                    <el-menu-item index="/accountManagements/roleManagement">角色管理</el-menu-item>
+                    <el-menu-item index="/accountManagements/addRoles">新增角色</el-menu-item>
                 </el-submenu>
                 <el-submenu index="1-2">
                     <template slot="title">权限管理</template>
