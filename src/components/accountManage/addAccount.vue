@@ -4,7 +4,7 @@
         <div class="addAccount-nav">
            <div class="dashed"></div>
            <el-menu theme="dark"  class="el-menu-demo" mode="horizontal">
-               <el-menu-item index="1">返回</el-menu-item>
+               <el-menu-item index="1" @click="toAccountManagement">返回</el-menu-item>
            </el-menu>
            </el-menu>
            <div class="clearFix">
@@ -70,16 +70,19 @@
                 setAddAccount:'setAddAccount',
                 getAccountManagement:'getAccountManagement'
             }),
+            toAccountManagement(){
+                this.$router.push({path:'/accountManagements/accountManagement'})
+            },
             button(){
 //
                 console.log(this.accountManagement);
-                this.setAddAccount({ "id":"201701",
-                    "user":"gaohan1",
-                    "realName":"XXX",
-                    "section":"人力资",
-                    "role":"普通管",
-                    "state":"可用",
-                    "joinDate":"2017-01-02"})
+                this.setAddAccount({ "id":this.id,
+                    "user":this.user,
+                    "realName":this.realName,
+                    "section":this.section,
+                    "role":this.role,
+                    "state":this.state,
+                    "joinDate":this.joinDate})
             }
         }
     }

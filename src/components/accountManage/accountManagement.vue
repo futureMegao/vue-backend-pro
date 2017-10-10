@@ -118,6 +118,7 @@
             //新增账户
             addAccount(){
                 console.log(this.accountManagement);
+                this.$router.push({path:'/accountManagements/addAccount'})
             },
 //            ...mapActions('accountManagement',{
 //                getAccountManagement : 'getAccountManagement'
