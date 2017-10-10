@@ -18,7 +18,6 @@ const actions = {
 const mutations = {
     [types.GET_ACCOUNT_MANAGEMENT](state, {accountManagement}){
         if(Array.isArray(accountManagement) && accountManagement.length > 0){
-
             state.accountManagement = accountManagement;
         }
     }

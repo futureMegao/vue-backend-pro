@@ -6,3 +6,7 @@ export const SET_HISTORY_TABS = 'setHistoryTabs'
 export const DELETE_HISTORY_TABS='deleteHistoryTabs'
 // 设置面包屑信息
 export const SET_CRUMBS_Info = 'setCrumbsInfo'
+//账号管理数据
+export const GET_ACCOUNT_MANAGEMENT='getAccountManagement'
+//添加账号
+export const SET_ADD_ACCOUNT='setAddAccount'

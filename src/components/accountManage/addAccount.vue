@@ -9,30 +9,33 @@
            </el-menu>
            <div class="clearFix">
                 <div class="addAccount-list">
-                    <span>用户名：</span><el-input v-model="input" placeholder="请输入内容" class="addAccount-input"></el-input>
+                    <span>ID：</span><el-input v-model="id" placeholder="请输入内容" class="addAccount-input"></el-input>
                 </div>
                <div class="addAccount-list">
-                   <span>密码：</span><el-input v-model="input" placeholder="请输入内容" class="addAccount-input"></el-input>
+                   <span>用户名：</span><el-input v-model="user" placeholder="请输入内容" class="addAccount-input"></el-input>
                </div>
                <div class="addAccount-list">
-                   <span>真实姓名：</span><el-input v-model="input" placeholder="请输入内容" class="addAccount-input"></el-input>
+                   <span>真实姓名：</span><el-input v-model="realName" placeholder="请输入内容" class="addAccount-input"></el-input>
                </div>
                <div class="addAccount-list">
-                   <span>手机号：</span><el-input v-model="input" placeholder="请输入内容" class="addAccount-input"></el-input>
+                   <span>部门：</span><el-input v-model="section" placeholder="请输入内容" class="addAccount-input"></el-input>
                </div>
                <div class="addAccount-list">
-                   <span>部门：</span><el-input v-model="input" placeholder="请输入内容" class="addAccount-input"></el-input>
+                   <span>角色：</span><el-input v-model="role" placeholder="请输入内容" class="addAccount-input"></el-input>
                </div>
-               <div class="addAccount-list">
-                   <span>性别：</span> <input type="radio" name="sex" value="男" />男
-                   <input type="radio" name="sex" value="女" />女
-               </div>
+               <!--<div class="addAccount-list">-->
+                   <!--<span>性别：</span> <input type="radio" name="sex" value="男" />男-->
+                   <!--<input type="radio" name="sex" value="女" />女-->
+               <!--</div>-->
                 <div  class="addAccount-list">
-                    <span>角色：</span><el-input v-model="input" placeholder="请输入内容" class="addAccount-input"></el-input>
+                    <span>账号状态：</span><el-input v-model="state" placeholder="请输入内容" class="addAccount-input"></el-input>
                 </div>
+               <div  class="addAccount-list">
+                   <span>加入时间：</span><el-input v-model="joinDate" placeholder="请输入内容" class="addAccount-input"></el-input>
+               </div>
            </div>
            <div>
-               <el-button type="primary" size="large" class="present">提交</el-button>
+               <el-button type="primary" size="large" class="present" @click="button">提交</el-button>
            </div>
        </div>
 
@@ -40,13 +43,44 @@
 </template>
 
 <script>
+    import {mapState,mapActions} from 'vuex'
     export default {
         name: 'add-account',
         data () {
             return {
                 radio: '1',
-                input:''
+                input:'',
+                "id":"",
+                "user":"",
+                "realName":"",
+                "section":"",
+                "role":"",
+                "state":"",
+                "joinDate":""
             };
+        },
+        computed:{
+            ...mapState({
+                addAccount : state => state.root.addAccount,
+                accountManagement:state=>state.root.accountManagement
+            })
+        },
+        methods:{
+            ...mapActions({
+                setAddAccount:'setAddAccount',
+                getAccountManagement:'getAccountManagement'
+            }),
+            button(){
+//
+                console.log(this.accountManagement);
+                this.setAddAccount({ "id":"201701",
+                    "user":"gaohan1",
+                    "realName":"XXX",
+                    "section":"人力资",
+                    "role":"普通管",
+                    "state":"可用",
+                    "joinDate":"2017-01-02"})
+            }
         }
     }
 </script>

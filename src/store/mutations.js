@@ -43,6 +43,16 @@ export default {
     [types.SET_CRUMBS_Info] (state, payload) {
 
         state.root.crumbsInfo = payload;
+    },
+    //账号管理信息
+    [types.GET_ACCOUNT_MANAGEMENT](state, payload){
+        if(Array.isArray(state.root.accountManagement) && payload.length >= 0){
+            state.root.accountManagement = payload;
+        }
+    },
+    //添加账号
+    [types.SET_ADD_ACCOUNT](state,payload){
+        state.root.accountManagement.push(payload);
     }
 }
 

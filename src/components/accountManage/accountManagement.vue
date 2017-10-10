@@ -60,6 +60,17 @@
                         label="加入时间"
                         show-overflow-tooltip>
                 </el-table-column>
+                <el-table-column label="操作">
+                    <template scope="scope">
+                        <el-button
+                                size="small"
+                                @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
+                        <el-button
+                                size="small"
+                                type="danger"
+                                @click="handleDelete(scope.$index, scope.row)">删除</el-button>
+                    </template>
+                </el-table-column>
             </el-table>
             <div style="margin-top: 20px">
                 <!--<el-button @click="toggleSelection([tableData3[1], tableData3[2]])">切换第二、第三行的选中状态</el-button>-->
@@ -80,8 +91,11 @@
             }
         },
         computed:{
-            ...mapState('accountManagement',{
-                accountManagement:'accountManagement'
+//            ...mapState('accountManagement',{
+//                accountManagement:'accountManagement'
+//            })
+            ...mapState({
+                accountManagement : state => state.root.accountManagement
             })
         },
         methods : {
@@ -103,10 +117,13 @@
             },
             //新增账户
             addAccount(){
-              alert(1)
+                console.log(this.accountManagement);
             },
-            ...mapActions('accountManagement',{
-                getAccountManagement : 'getAccountManagement'
+//            ...mapActions('accountManagement',{
+//                getAccountManagement : 'getAccountManagement'
+//            })
+            ...mapActions({
+                getAccountManagement:'getAccountManagement'
             })
         },
         created(){

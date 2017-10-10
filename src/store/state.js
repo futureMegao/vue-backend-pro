@@ -6,6 +6,28 @@ export default {
         historyTabs : [],
 
         // 面包屑信息
-        crumbsInfo:[]
+        crumbsInfo:[],
+
+        //账号管理数据
+        accountManagement:[ {
+            "id":"201701",
+            "user":"gaohanwei1",
+            "realName":"XXX",
+            "section":"人力资源",
+            "role":"普通管理员",
+            "state":"可用",
+            "joinDate":"2017-01-01"
+        },
+            {
+                "id":"201701",
+                "user":"gaohanwei1",
+                "realName":"XXX",
+                "section":"人力资源",
+                "role":"普通管理员",
+                "state":"可用",
+                "joinDate":"2017-01-01"
+            }],
+        //添加账号
+        addAccount:[]
     }
 }

@@ -1,5 +1,6 @@
 // 公共 action
 import * as types from './types'
+import axios from 'axios'
 
 export default {
 
@@ -20,6 +21,21 @@ export default {
     deleteHistoryTabs:function(context,payload){
 
         context.commit(types.DELETE_HISTORY_TABS,payload);
-    }
+    },
 
+    //设置账号管理信息
+    getAccountManagement:function(context,payload){
+        // axios.get('../static/userList.json')
+        // .then((res) =>{
+        //     console.log(res.data);
+        //     context.commit(types.GET_ACCOUNT_MANAGEMENT, res.data.accountManagement)
+        console.log(context)
+        context.commit(types.GET_ACCOUNT_MANAGEMENT,payload)
+
+        // })
+    },
+    //添加账号
+    setAddAccount:function(context,payload){
+        context.commit(types.SET_ADD_ACCOUNT,payload);
+    }
 }

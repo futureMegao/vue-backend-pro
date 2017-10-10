@@ -4,7 +4,7 @@
         <div class="header"></div>
 
         <!--左侧菜单-->
-        <left-bar style="overflow:hidden"></left-bar>
+        <left-bar class="clearFix"></left-bar>
 
         <!--右侧banner-->
         <div style="overflow:hidden">
