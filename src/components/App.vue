@@ -1,8 +1,6 @@
 <template>
     <div id="app">
-
         <div class="header"></div>
-
         <!--左侧菜单-->
         <left-bar class="clearFix"></left-bar>
 
@@ -12,7 +10,6 @@
 
             <router-view></router-view>
         </div>
-
     </div>
 </template>
 

@@ -41,7 +41,7 @@
                         width="120">
                 </el-table-column>
                 <el-table-column
-                        prop="realName"
+                        prop="section"
                         label="部门"
                         width="120">
                 </el-table-column>
@@ -72,10 +72,6 @@
                     </template>
                 </el-table-column>
             </el-table>
-            <div style="margin-top: 20px">
-                <!--<el-button @click="toggleSelection([tableData3[1], tableData3[2]])">切换第二、第三行的选中状态</el-button>-->
-                <!--<el-button @click="toggleSelection()">取消选择</el-button>-->
-            </div>
         </div>
     </div>
 </template>
@@ -115,11 +111,30 @@
             handleIconClick(index,row) {
                 console.log(index,row);
             },
-            //新增账户
+            //新增账户跳转路由
             addAccount(){
                 console.log(this.accountManagement);
                 this.$router.push({path:'/accountManagements/addAccount'})
             },
+            handleEdit(){
+                this.$prompt('请输入邮箱', '提示', {
+                    confirmButtonText: '确定',
+                    cancelButtonText: '取消',
+                    inputPattern: /[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?/,
+                    inputErrorMessage: '邮箱格式不正确'
+                }).then(({ value }) => {
+                    this.$message({
+                        type: 'success',
+                        message: '你的邮箱是: ' + value
+                    });
+                }).catch(() => {
+                    this.$message({
+                        type: 'info',
+                        message: '取消输入'
+                    });
+                });
+            },
+            //删除账户数据
             handleDelete(index){
                 console.log(index)
                 this.deleteAccount(index);

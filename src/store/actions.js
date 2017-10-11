@@ -29,9 +29,7 @@ export default {
         // .then((res) =>{
         //     console.log(res.data);
         //     context.commit(types.GET_ACCOUNT_MANAGEMENT, res.data.accountManagement)
-        console.log(context)
         context.commit(types.GET_ACCOUNT_MANAGEMENT,payload)
-
         // })
     },
     //添加账号
@@ -41,5 +39,10 @@ export default {
     //删除账号
     deleteAccount:function (context,payload){
         context.commit(types.DELETE_ACCOUNT,payload)
+    },
+    //角色管理信息
+    roleManagement:function(context,payload){
+        context.commit(types.GET_ROLE_MANAGEMENT,payload)
     }
+
 }

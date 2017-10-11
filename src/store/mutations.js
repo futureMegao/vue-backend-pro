@@ -46,7 +46,7 @@ export default {
     },
     //账号管理信息
     [types.GET_ACCOUNT_MANAGEMENT](state, payload){
-        if(Array.isArray(state.root.accountManagement) && payload.length >= 0){
+        if(Array.isArray(state.root.accountManagement) && payload.length > 0){
             state.root.accountManagement = payload;
         }
     },
@@ -56,9 +56,15 @@ export default {
     },
     //删除账号
     [types.DELETE_ACCOUNT](state,payload){
-        console.log(state.root.accountManagement[payload])
+        // console.log(state.root.accountManagement[payload])
         let index=state.root.accountManagement[payload]
         state.root.accountManagement.splice(index,1)
+    },
+    //角色管理信息
+    [types.GET_ROLE_MANAGEMENT](state,payload){
+        if(Array.isArray(state.root.roleManagement) && payload.length > 0){
+            state.root.roleManagement = payload;
+        }
     }
 }
 

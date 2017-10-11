@@ -8,7 +8,7 @@ import './css/index.css'
 import './css/custome.css'
 
 
-import {Menu, Submenu, MenuItem, MenuItemGroup, Breadcrumb, BreadcrumbItem,Tag,radioButton,radioGroup,tooltip,tableColumn,table,button,input,radio} from 'element-ui'
+import {Menu, Submenu, MenuItem, MenuItemGroup, Breadcrumb, BreadcrumbItem,Tag,radioButton,radioGroup,tooltip,tableColumn,table,button,input,radio,alert,dropdown,col,dropdownMenu,dropdownItem,option,select,datePicker,formItem,form,timePicker} from 'element-ui'
 
 Vue.component(Menu.name, Menu)
 Vue.component(Submenu.name, Submenu)
@@ -25,6 +25,24 @@ Vue.component(table.name, table)
 Vue.component(button.name, button)
 Vue.component(input.name, input)
 Vue.component(radio.name, radio)
+Vue.component(alert.name, alert)
+Vue.component(dropdown.name, dropdown)
+Vue.component(col.name, col)
+Vue.component(dropdownMenu.name, dropdownMenu)
+Vue.component(dropdownItem.name, dropdownItem)
+Vue.component(option.name, option)
+Vue.component(select.name, select)
+Vue.component(datePicker.name, datePicker)
+Vue.component(formItem.name, formItem)
+Vue.component(form.name, form)
+Vue.component(timePicker.name, timePicker)
+
+
+
+
+
+
+
 
 
 

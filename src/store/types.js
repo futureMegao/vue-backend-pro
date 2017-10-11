@@ -12,3 +12,5 @@ export const GET_ACCOUNT_MANAGEMENT='getAccountManagement'
 export const SET_ADD_ACCOUNT='setAddAccount'
 //删除账号
 export const DELETE_ACCOUNT='deleteAccount'
+//角色列表
+export const GET_ROLE_MANAGEMENT='getRoleManagement'

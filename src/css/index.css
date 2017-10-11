@@ -93,12 +93,30 @@
   margin-bottom:20px;
   margin-left:100px;
   margin-top:20px;
+  position:relative;
 }
-.addAccount-list span {
+.addAccount-list>span {
   display:inline-block;
   width:80px;
 }
 .present {
   margin-left:100px;
 }
+.errors {
+  position:absolute;
+  right:-100px;
+  bottom:10px;
+  color:red;
+  font-size:13px;
+}
+.roleList {
+  padding:0;
+  /*margin-left:-30px;*/
+  font-size:18px;
+  display:inline-block;
+  position:absolute;
+  left:-20px;
+  top:-5px;
+}
+
 
