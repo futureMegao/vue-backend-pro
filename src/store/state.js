@@ -18,15 +18,25 @@ export default {
             "state":"可用",
             "joinDate":"2017-01-01"
         },
-            {
-                "id":"201701",
-                "user":"gaohanwei1",
-                "realName":"XXX",
-                "section":"人力资源",
-                "role":"普通管理员",
-                "state":"可用",
-                "joinDate":"2017-01-01"
-            }],
+        {
+            "id":"201701",
+            "user":"gaohanwei1",
+            "realName":"XXX",
+            "section":"人力",
+            "role":"普通",
+            "state":"可用",
+            "joinDate":"2017-01-01"
+        },
+        {
+            "id":"201",
+            "user":"gaohanwei1",
+            "realName":"XXX",
+            "section":"人力",
+            "role":"普通",
+            "state":"可用",
+            "joinDate":"2017-01-01"
+        },
+        ],
         //添加账号
         addAccount:[]
     }

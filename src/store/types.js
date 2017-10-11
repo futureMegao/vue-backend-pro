@@ -10,3 +10,5 @@ export const SET_CRUMBS_Info = 'setCrumbsInfo'
 export const GET_ACCOUNT_MANAGEMENT='getAccountManagement'
 //添加账号
 export const SET_ADD_ACCOUNT='setAddAccount'
+//删除账号
+export const DELETE_ACCOUNT='deleteAccount'

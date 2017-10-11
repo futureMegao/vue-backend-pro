@@ -53,6 +53,12 @@ export default {
     //添加账号
     [types.SET_ADD_ACCOUNT](state,payload){
         state.root.accountManagement.push(payload);
+    },
+    //删除账号
+    [types.DELETE_ACCOUNT](state,payload){
+        console.log(state.root.accountManagement[payload])
+        let index=state.root.accountManagement[payload]
+        state.root.accountManagement.splice(index,1)
     }
 }
 

@@ -68,7 +68,7 @@
                         <el-button
                                 size="small"
                                 type="danger"
-                                @click="handleDelete(scope.$index, scope.row)">删除</el-button>
+                                @click="handleDelete(scope.$index,scope.row)">删除</el-button>
                     </template>
                 </el-table-column>
             </el-table>
@@ -95,7 +95,7 @@
 //                accountManagement:'accountManagement'
 //            })
             ...mapState({
-                accountManagement : state => state.root.accountManagement
+                accountManagement : state => state.root.accountManagement,
             })
         },
         methods : {
@@ -112,19 +112,24 @@
             handleSelectionChange(val) {
                 this.multipleSelection = val;
             },
-            handleIconClick(ev) {
-                console.log(ev);
+            handleIconClick(index,row) {
+                console.log(index,row);
             },
             //新增账户
             addAccount(){
                 console.log(this.accountManagement);
                 this.$router.push({path:'/accountManagements/addAccount'})
             },
+            handleDelete(index){
+                console.log(index)
+                this.deleteAccount(index);
+            },
 //            ...mapActions('accountManagement',{
 //                getAccountManagement : 'getAccountManagement'
 //            })
             ...mapActions({
-                getAccountManagement:'getAccountManagement'
+                getAccountManagement:'getAccountManagement',
+                deleteAccount :'deleteAccount'
             })
         },
         created(){

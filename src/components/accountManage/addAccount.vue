@@ -74,7 +74,6 @@
                 this.$router.push({path:'/accountManagements/accountManagement'})
             },
             button(){
-//
                 console.log(this.accountManagement);
                 this.setAddAccount({ "id":this.id,
                     "user":this.user,
