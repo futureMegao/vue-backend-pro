@@ -36,6 +36,10 @@ export default {
     setAddAccount:function(context,payload){
         context.commit(types.SET_ADD_ACCOUNT,payload);
     },
+    //修改账户数据
+    alterAccount:function(context,payload){
+        context.commit(types.ALTER_ACCOUNT,payload)
+    },
     //删除账号
     deleteAccount:function (context,payload){
         context.commit(types.DELETE_ACCOUNT,payload)

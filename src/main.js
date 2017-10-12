@@ -2,13 +2,14 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './components/App'
+import 'element-ui/lib/theme-default/index.css'
 import router from './router'
 
 import './css/index.css'
 import './css/custome.css'
 
 
-import {Menu, Submenu, MenuItem, MenuItemGroup, Breadcrumb, BreadcrumbItem,Tag,radioButton,radioGroup,tooltip,tableColumn,table,button,input,radio,alert,dropdown,col,dropdownMenu,dropdownItem,option,select,datePicker,formItem,form,timePicker} from 'element-ui'
+import {Menu, Submenu, MenuItem, MenuItemGroup, Breadcrumb, BreadcrumbItem,Tag,radioButton,radioGroup,tooltip,tableColumn,table,button,input,radio,alert,dropdown,col,dropdownMenu,dropdownItem,option,select,datePicker,formItem,form,timePicker,dialog} from 'element-ui'
 
 Vue.component(Menu.name, Menu)
 Vue.component(Submenu.name, Submenu)
@@ -36,6 +37,7 @@ Vue.component(datePicker.name, datePicker)
 Vue.component(formItem.name, formItem)
 Vue.component(form.name, form)
 Vue.component(timePicker.name, timePicker)
+Vue.component(dialog.name, dialog)
 
 
 

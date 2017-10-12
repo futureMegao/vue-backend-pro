@@ -54,10 +54,17 @@ export default {
     [types.SET_ADD_ACCOUNT](state,payload){
         state.root.accountManagement.push(payload);
     },
+    //修改账号数据
+    [types.ALTER_ACCOUNT](state,payload){
+        console.log(payload)
+        let index=state.root.accountManagement.findIndex(x=>x.index===payload.index)
+        state.root.accountManagement.splice(index,1,payload)
+    },
     //删除账号
     [types.DELETE_ACCOUNT](state,payload){
         // console.log(state.root.accountManagement[payload])
-        let index=state.root.accountManagement[payload]
+        console.log(payload)
+        let index=state.root.accountManagement.findIndex(x=>x===payload)
         state.root.accountManagement.splice(index,1)
     },
     //角色管理信息

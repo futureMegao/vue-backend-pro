@@ -14,3 +14,5 @@ export const SET_ADD_ACCOUNT='setAddAccount'
 export const DELETE_ACCOUNT='deleteAccount'
 //角色列表
 export const GET_ROLE_MANAGEMENT='getRoleManagement'
+//修改账户数据
+export const ALTER_ACCOUNT='alterAccount'

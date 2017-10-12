@@ -122,25 +122,7 @@
                 }
                 if (!this.id) {//undefind 取反
                     errorText = ''
-                    this.userFlag = true
-                }
-                return {
-                    status,
-                    errorText
-                }
-            },
-            userErrors(){
-                let errorText, status
-                if (!/^\d{4,6}$/g.test(this.id)) {
-                    status = false
-                    errorText = 'ID必须为4至6位的数字'
-                }else{
-                    status = true
-                    errorText = ''
-                }
-                if (!this.id) {//undefind 取反
-                    errorText = ''
-                    this.userFlag = true
+//                    this.userFlag = true
                 }
                 return {
                     status,
@@ -158,9 +140,6 @@
             },
             button(){
                 console.log(this.accountManagement);
-                if(!this.user){
-
-                }
                 this.setAddAccount({ "id":this.id,
                     "user":this.user,
                     "realName":this.realName,

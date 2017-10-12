@@ -11,6 +11,7 @@ export default {
         //账号管理数据
         accountManagement:[ {
             "id":"201701",
+            'index':0,
             "user":"gaohanwei1",
             "realName":"XXX",
             "section":"人力资源",
@@ -20,6 +21,7 @@ export default {
         },
         {
             "id":"201701",
+            'index':1,
             "user":"gaohanwei1",
             "realName":"XXX",
             "section":"人力",
@@ -29,6 +31,7 @@ export default {
         },
         {
             "id":"201",
+            'index':2,
             "user":"gaohanwei1",
             "realName":"XXX",
             "section":"人力",

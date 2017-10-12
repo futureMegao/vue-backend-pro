@@ -118,5 +118,8 @@
   left:-20px;
   top:-5px;
 }
+.el-dialog--small {
+  width:65%;
+}
 
 
