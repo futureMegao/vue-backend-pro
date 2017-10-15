@@ -1,0 +1,2 @@
+webpackJsonp([4],{difz:function(e,n,t){"use strict";Object.defineProperty(n,"__esModule",{value:!0});var r=t("eknR"),u=t("tnv8"),a=t("VU/8"),s=a(r.a,u.a,null,null,null);n.default=s.exports},eknR:function(e,n,t){"use strict";n.a={name:"add-roles"}},tnv8:function(e,n,t){"use strict";var r=function(){var e=this,n=e.$createElement;return(e._self._c||n)("router-view")},u=[],a={render:r,staticRenderFns:u};n.a=a}});
+//# sourceMappingURL=4.cb59e579887ffd48b27a.js.map
