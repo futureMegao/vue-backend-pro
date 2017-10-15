@@ -40,6 +40,10 @@ export default {
     alterAccount:function(context,payload){
         context.commit(types.ALTER_ACCOUNT,payload)
     },
+    //搜索账户数据
+    searchAccountManagement:function(context,payload){
+        context.commit(types.SEARCH_ACCOUNT_MANAGEMENT,payload)
+    },
     //删除账号
     deleteAccount:function (context,payload){
         context.commit(types.DELETE_ACCOUNT,payload)

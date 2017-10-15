@@ -16,3 +16,5 @@ export const DELETE_ACCOUNT='deleteAccount'
 export const GET_ROLE_MANAGEMENT='getRoleManagement'
 //修改账户数据
 export const ALTER_ACCOUNT='alterAccount'
+//搜索用户数据
+export const SEARCH_ACCOUNT_MANAGEMENT='searchAccountManagement'

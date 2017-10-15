@@ -46,7 +46,6 @@
         watch : {
 
             $route(to, from){
-
                 let crumbs = [];
 
                 to.matched.forEach((item) =>{

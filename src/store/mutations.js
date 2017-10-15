@@ -60,6 +60,15 @@ export default {
         let index=state.root.accountManagement.findIndex(x=>x.index===payload.index)
         state.root.accountManagement.splice(index,1,payload)
     },
+    //搜索账户数据
+    [types.SEARCH_ACCOUNT_MANAGEMENT](state,payload){
+        // console.log(payload)
+        let a=state.root.accountManagement
+        a.forEach(function(item){
+            console.log(item)
+        })
+        // console.log(a)
+    },
     //删除账号
     [types.DELETE_ACCOUNT](state,payload){
         // console.log(state.root.accountManagement[payload])

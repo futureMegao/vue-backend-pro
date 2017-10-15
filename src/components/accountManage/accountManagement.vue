@@ -10,7 +10,7 @@
                 <!--<el-button type="primary">上传<i class="el-icon-upload el-icon&#45;&#45;right"></i></el-button>-->
             </div>
             <div class="accountMangement-nav-right">
-                <el-input placeholder="搜索用户名，真实姓名" icon="search" v-model="input2" :on-icon-click="handleIconClick"></el-input>
+                <el-input placeholder="搜索用户名" icon="search" v-model="search" :on-icon-click="handleIconClick"></el-input>
             </div>
         </div>
         <div>
@@ -153,7 +153,7 @@
         },
         data() {
             return {
-                input2 : '',
+                search:'',
                 multipleSelection: [],
                 dialogFormVisible: false,
                 form: {
@@ -216,8 +216,9 @@
             handleSelectionChange(val) {
                 this.multipleSelection = val;
             },
-            handleIconClick(index,row) {
-                console.log(index,row);
+            handleIconClick(ev) {
+//                console.log(this.search);
+                this.searchAccountManagement(this.search)
             },
             //新增账户跳转路由
             addAccount(){
@@ -259,7 +260,8 @@
             ...mapActions({
                 getAccountManagement:'getAccountManagement',
                 deleteAccount :'deleteAccount',
-                alterAccount :'alterAccount'
+                alterAccount :'alterAccount',
+                searchAccountManagement:'searchAccountManagement'
 
             })
         },
