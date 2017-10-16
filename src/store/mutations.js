@@ -46,6 +46,7 @@ export default {
     },
     //账号管理信息
     [types.GET_ACCOUNT_MANAGEMENT](state, payload){
+        console.log(payload)
         if(Array.isArray(state.root.accountManagement) && payload.length > 0){
             state.root.accountManagement = payload;
         }
@@ -62,18 +63,19 @@ export default {
     },
     //搜索账户数据
     [types.SEARCH_ACCOUNT_MANAGEMENT](state,payload){
-        // console.log(payload)
         let a=state.root.accountManagement
-        a.forEach(function(item){
-            console.log(item)
-        })
-        // console.log(a)
+        let b=Object.keys(a[0])
+        for(var i=0;i<a.length;i++){
+            for(var j=0;j<b.length;j++){
+                if(String(a[i][b[j]]).indexOf(payload)!= -1){
+                    state.root.searchAccount.push(a[i])
+                }
+            }
+        }
     },
     //删除账号
     [types.DELETE_ACCOUNT](state,payload){
-        // console.log(state.root.accountManagement[payload])
-        console.log(payload)
-        let index=state.root.accountManagement.findIndex(x=>x===payload)
+        let index=state.root.accountManagement.findIndex( x => x === payload)
         state.root.accountManagement.splice(index,1)
     },
     //角色管理信息

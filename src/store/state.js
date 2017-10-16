@@ -42,6 +42,8 @@ export default {
         ],
         //添加账号
         addAccount:[],
+        //检索数据
+        searchAccount:[],
         //角色列表数据
         roleManagement:[
             {

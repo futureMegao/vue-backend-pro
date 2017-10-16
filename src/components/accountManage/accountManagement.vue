@@ -16,7 +16,7 @@
         <div>
             <el-table
                     ref="multipleTable"
-                    :data="accountManagement"
+                    :data="isSearch ? accountManagement:searchAccount"
                     border
                     tooltip-effect="dark"
                     style="width: 100%"
@@ -153,6 +153,7 @@
         },
         data() {
             return {
+                isSearch:1,
                 search:'',
                 multipleSelection: [],
                 dialogFormVisible: false,
@@ -200,7 +201,9 @@
 //            })
             ...mapState({
                 accountManagement : state => state.root.accountManagement,
+                searchAccount : state =>state.root.searchAccount
             })
+
         },
         methods : {
             //el  自带的方法
@@ -227,7 +230,6 @@
             },
             //删除账户数据
             handleDelete(index,row){
-                console.log(index,row)
                 this.deleteAccount(row);
             },
             //点击编辑让弹窗内容和点击的内容同步
@@ -266,7 +268,14 @@
             })
         },
         created(){
-            this.getAccountManagement();
+            if(this.searchAccount){
+                this.isSearch=1
+//                this.searchAccountManagement()
+//                this.getAccountManagement(2);
+
+            }else {
+                this.isSearch=0
+            }
         }
     }
 </script>
