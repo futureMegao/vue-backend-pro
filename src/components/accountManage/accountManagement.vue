@@ -219,9 +219,14 @@
             handleSelectionChange(val) {
                 this.multipleSelection = val;
             },
-            handleIconClick(ev) {
-//                console.log(this.search);
+            //检索数据
+            handleIconClick() {
                 this.searchAccountManagement(this.search)
+                if(this.searchAccount){
+                    this.isSearch=0
+                }else {
+                    this.isSearch=1
+                }
             },
             //新增账户跳转路由
             addAccount(){
@@ -268,14 +273,7 @@
             })
         },
         created(){
-            if(this.searchAccount){
-                this.isSearch=1
-//                this.searchAccountManagement()
-//                this.getAccountManagement(2);
-
-            }else {
-                this.isSearch=0
-            }
+            this.getAccountManagement(2);
         }
     }
 </script>
