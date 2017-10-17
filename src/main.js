@@ -9,9 +9,10 @@ import './css/index.css'
 import './css/custome.css'
 
 
-import {Menu, Submenu, MenuItem, MenuItemGroup, Breadcrumb, BreadcrumbItem,Tag,radioButton,radioGroup,tooltip,tableColumn,table,button,input,radio,alert,dropdown,col,dropdownMenu,dropdownItem,option,select,datePicker,formItem,form,timePicker,dialog} from 'element-ui'
+import {Menu, Submenu, MenuItem, MenuItemGroup, Breadcrumb, BreadcrumbItem,Tag,radioButton,radioGroup,tooltip,tableColumn,table,button,input,radio,alert,dropdown,col,dropdownMenu,dropdownItem,option,select,datePicker,formItem,form,timePicker,dialog,pagination} from 'element-ui'
 
 Vue.component(Menu.name, Menu)
+Vue.component(pagination.name, pagination)
 Vue.component(Submenu.name, Submenu)
 Vue.component(MenuItem.name, MenuItem)
 Vue.component(MenuItemGroup.name, MenuItemGroup)

@@ -121,5 +121,15 @@
 .el-dialog--small {
   width:65%;
 }
+.pagination {
+  position:absolute;
+  bottom:30px;
+  left:400px;
+  font-size:20px;
+}
+.right-banner-content {
+  height:442px;
+  overflow:hidden;
+}
 
 

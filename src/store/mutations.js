@@ -24,7 +24,6 @@ export default {
 
         // 如果不存在相同的历史记录则添加
         if(!isExitTab){
-
             tempTabs.push({name : payload.name, path : payload.path, colorType : 'primary'});
         }
 
@@ -63,7 +62,14 @@ export default {
     },
     //搜索账户数据
     [types.SEARCH_ACCOUNT_MANAGEMENT](state,payload){
+        console.log(payload)
+        state.root.searchAccount.splice(0,state.root.searchAccount.length)
+
         let a=state.root.accountManagement
+        // if(payload==''){
+        //     state.root.searchAccount=a
+        //     return
+        // }
         let b=Object.keys(a[0])
         for(var i=0;i<a.length;i++){
             for(var j=0;j<b.length;j++){
