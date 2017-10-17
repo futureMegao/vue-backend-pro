@@ -89,6 +89,12 @@ export default {
         if(Array.isArray(state.root.roleManagement) && payload.length > 0){
             state.root.roleManagement = payload;
         }
+    },
+    //图书主数据
+    [types.GET_BOOKS](state,payload){
+        if(Array.isArray(state.root.books) && payload.length > 0){
+            state.root.books = payload;
+        }
     }
 }
 

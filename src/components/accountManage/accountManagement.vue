@@ -10,7 +10,7 @@
                 <!--<el-button type="primary">上传<i class="el-icon-upload el-icon&#45;&#45;right"></i></el-button>-->
             </div>
             <div class="accountMangement-nav-right">
-                <el-input placeholder="搜索用户名" icon="search" v-model="search" :on-icon-click="handleIconClick"></el-input>
+                <el-input placeholder="全局搜索" icon="search" v-model="search" :on-icon-click="handleIconClick"></el-input>
             </div>
         </div>
         <div>
@@ -75,7 +75,6 @@
                             <el-dialog title="编辑内容" :visible.sync="dialogFormVisible">
                                 <div class="addAccount-list">
                                     <span>ID：</span><el-input v-model="id" placeholder="请输入内容" class="addAccount-input"></el-input>
-                                    <em class="errors">{{}}</em>
                                 </div>
                                 <div class="addAccount-list">
                                     <span>用户名：</span><el-input v-model="user" placeholder="请输入内容" class="addAccount-input"></el-input>
@@ -226,6 +225,7 @@
                 accountManagement : state => state.root.accountManagement,
                 searchAccount : state =>state.root.searchAccount
             }),
+            //计算属性  每次渲染10条数据
             showList(){
                 var start=10*this.paginationIndex
                 var end=10*(this.paginationIndex+1)
@@ -250,6 +250,7 @@
             handleSizeChange(val) {
                 console.log(`每页 ${val} 条`);
             },
+            //分页操作
             handleCurrentChange(val) {
 //                console.log(`当前页: ${val}`);
 //                alert(val)
@@ -271,7 +272,7 @@
             },
             //删除账户数据
             handleDelete(index,row){
-                this.deleteAccount(row);
+                this.deleteAccount(row)
             },
             //点击编辑让弹窗内容和点击的内容同步
             editor(index,row){

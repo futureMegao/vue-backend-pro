@@ -20,15 +20,18 @@
                 </el-submenu>
 
             </el-submenu>
+            <el-submenu index="2">
+                <template slot="title"><i class="el-icon-setting"></i>图书管理</template>
+                <el-submenu index="2-1">
+                    <template slot="title">图书</template>
+                    <el-menu-item index="/books/bookContent">图书主界面</el-menu-item>
+                    <el-menu-item index="/books/index">图书主界</el-menu-item>
 
+                </el-submenu>
 
-            <el-submenu index="5">
-                <template slot="title"><i class="el-icon-message"></i>组件</template>
-                <el-menu-item-group>
-                    <el-menu-item index="3"><i class="el-icon-setting"></i>组件一</el-menu-item>
-                </el-menu-item-group>
             </el-submenu>
-            <el-menu-item index="3"><i class="el-icon-setting"></i>组件</el-menu-item>
+
+
 
 
             <el-menu-item index="3"><i class="el-icon-date"></i>图表</el-menu-item>
@@ -55,10 +58,10 @@
         },
         methods : {
             handleOpen(key, keyPath) {
-                console.log(key, keyPath);
+//                console.log(key, keyPath);
             },
             handleClose(key, keyPath) {
-                console.log(key, keyPath);
+//                console.log(key, keyPath);
             }
 
         }

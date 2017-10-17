@@ -51,6 +51,14 @@ export default {
     //角色管理信息
     roleManagement:function(context,payload){
         context.commit(types.GET_ROLE_MANAGEMENT,payload)
+    },
+    //图书主数据
+    getBooks:function(context,payload){
+        axios.get('https://api.douban.com/v2/book/:id')
+        .then((res) =>{
+            console.log(res.data);
+            context.commit(types.GET_BOOKS, res.data)
+        })
     }
 
 }

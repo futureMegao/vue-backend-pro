@@ -15,6 +15,10 @@ const roleManagement = r => require.ensure([], () => r(require('../components/ac
 
 const addRoles = r => require.ensure([], () => r(require('../components/accountManage/addRoles.vue')), 'addRoles');
 
+const books = r => require.ensure([], () => r(require('../components/books/index.vue')), 'books');
+
+const bookContent = r => require.ensure([], () => r(require('../components/books/bookContent.vue')), 'bookContent');
+
 Vue.use(Router)
 
 export default new Router({
@@ -30,6 +34,14 @@ export default new Router({
                 {path : 'addAccount', component :addAccount, name : '新增账号'},
                 {path : 'roleManagement', component : roleManagement, name : '角色管理'},
                 {path : 'addRoles', component : addRoles, name : '新增角色'}
+            ]
+        },
+        {
+            path:'/books',
+            name:'图书',
+            component:books,
+            children:[
+                {path : 'bookContent', component :bookContent, name : '图书主界面'},
             ]
         },
         {

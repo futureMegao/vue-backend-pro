@@ -18,3 +18,5 @@ export const GET_ROLE_MANAGEMENT='getRoleManagement'
 export const ALTER_ACCOUNT='alterAccount'
 //搜索用户数据
 export const SEARCH_ACCOUNT_MANAGEMENT='searchAccountManagement'
+//获取图书主数据
+export const GET_BOOKS='getBooks'
