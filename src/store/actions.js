@@ -1,7 +1,7 @@
 // 公共 action
 import * as types from './types'
 import axios from 'axios'
-
+import 'fetch-jsonp'
 export default {
 
     // 设置历史记录 tabs
@@ -54,11 +54,13 @@ export default {
     },
     //图书主数据
     getBooks:function(context,payload){
-        axios.get('https://api.douban.com/v2/book/:id')
-        .then((res) =>{
-            console.log(res.data);
-            context.commit(types.GET_BOOKS, res.data)
-        })
+        // axios.get('/api')
+        // .then((res) =>{
+        //     console.log(res);
+        //     context.commit(types.GET_BOOKS, res)
+        // })
+        context.commit(types.GET_BOOKS, payload)
+
     }
 
 }

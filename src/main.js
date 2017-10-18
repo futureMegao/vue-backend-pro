@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './components/App'
 import 'element-ui/lib/theme-default/index.css'
 import router from './router'
+import 'fetch-jsonp'
 
 import './css/index.css'
 import './css/custome.css'
