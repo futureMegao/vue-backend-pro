@@ -96,17 +96,7 @@ export default {
         // if(Array.isArray(state.root.books)){
             state.root.books = payload;
         // }
-        // fetchJsonp('https://api.douban.com/v2/book/search?q=' + payload, {
-        //     jsonpCallback: 'callback',
-        //     jsonpCallbackFunction: 'miaov123'
-        // }).then( response => {
-        //     return response.json();
-        // } ).then( data => {
-        //     // this.pages = Math.ceil(data.total / this.prepage);
-        //     // this.result = data;
-        //     state.root.books=data;
-        //     console.log(data)
-        // } )
+
 
     }
 }

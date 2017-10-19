@@ -1,11 +1,11 @@
 <template>
-    <div id="app">
+    <div id="app clearFix">
         <div class="header"></div>
         <!--左侧菜单-->
         <left-bar class="clearFix"></left-bar>
 
         <!--右侧banner-->
-        <div style="overflow:hidden">
+        <div  class="right-bar">
             <right-banner></right-banner>
 
             <router-view></router-view>

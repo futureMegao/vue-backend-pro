@@ -44,7 +44,7 @@
         },
         watch:{
             books(){
-                console.log(this.books)
+//                console.log(this.books)
             }
         },
         created(){

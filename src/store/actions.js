@@ -62,7 +62,7 @@ export default {
         // })
         fetchJsonp('https://api.douban.com/v2/book/search?q=' + payload, {
             jsonpCallback: 'callback',
-            jsonpCallbackFunction: 'miaov123'
+            jsonpCallbackFunction: 'ziyong'
         }).then( response => {
             return response.json();
         } ).then( data => {
