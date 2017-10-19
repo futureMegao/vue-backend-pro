@@ -1,6 +1,21 @@
 <template>
     <div>
-        <div @click="click">woshi</div>
+        <div>
+            <input type="text" v-model="keyword" />
+            <button @click="search">搜索</button>
+        </div>
+        <hr/>
+        <div>
+            <ul>
+                <li v-for="book in books.books">
+                    <img :src="book.image" alt="">
+                    <div style="display: inline-block">
+                        <h2>{{book.title}}</h2>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
     </div>
 </template>
 <script>
@@ -8,6 +23,12 @@
     import 'fetch-jsonp'
     export default {
         name:'bookContent',
+        data(){
+            return {
+                keyword:'',
+
+            }
+        },
         computed:{
             ...mapState({
                 books : state => state.root.books
@@ -17,18 +38,17 @@
             ...mapActions({
                 getBooks:'getBooks'
             }),
-            click(){
-                console.log(this.HOST)
-//                var url = this.HOST + '/movie/in_theaters'
-//                this.$http.get(url).then(res => {
-//                    console.log(res)
-//                },res => {
-//                    console.info('调用失败');
-//                });
+            search(){
+                this.getBooks(this.keyword);
+            }
+        },
+        watch:{
+            books(){
+                console.log(this.books)
             }
         },
         created(){
-            this.getBooks(1);
+//            console.log(this.books)
         }
 
     }

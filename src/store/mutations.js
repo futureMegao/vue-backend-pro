@@ -1,7 +1,7 @@
 // 公共的 mustaions
 
 import * as types from './types'
-import 'fetch-jsonp'
+import fetchJsonp from 'fetch-jsonp'
 
 export default {
     // 设置打开的历史tabs
@@ -92,20 +92,21 @@ export default {
     },
     //图书主数据
     [types.GET_BOOKS](state,payload){
-        console.log(payload)
-        // if(Array.isArray(state.root.books) && payload.length > 0){
-        //     state.root.books = payload;
+        // console.log(payload)
+        // if(Array.isArray(state.root.books)){
+            state.root.books = payload;
         // }
-        fetchJsonp('https://api.douban.com/v2/book/search?q=' + payload, {
-            jsonpCallback: 'callback',
-            jsonpCallbackFunction: 'miaov123'
-        }).then( response => {
-            return response.json();
-        } ).then( data => {
-            // this.pages = Math.ceil(data.total / this.prepage);
-            // this.result = data;
-            state.root.books=data;
-        } )
+        // fetchJsonp('https://api.douban.com/v2/book/search?q=' + payload, {
+        //     jsonpCallback: 'callback',
+        //     jsonpCallbackFunction: 'miaov123'
+        // }).then( response => {
+        //     return response.json();
+        // } ).then( data => {
+        //     // this.pages = Math.ceil(data.total / this.prepage);
+        //     // this.result = data;
+        //     state.root.books=data;
+        //     console.log(data)
+        // } )
 
     }
 }

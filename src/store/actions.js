@@ -1,7 +1,8 @@
 // 公共 action
 import * as types from './types'
 import axios from 'axios'
-import 'fetch-jsonp'
+// import 'fetch-jsonp'
+import fetchJsonp from 'fetch-jsonp'
 export default {
 
     // 设置历史记录 tabs
@@ -59,7 +60,19 @@ export default {
         //     console.log(res);
         //     context.commit(types.GET_BOOKS, res)
         // })
-        context.commit(types.GET_BOOKS, payload)
+        fetchJsonp('https://api.douban.com/v2/book/search?q=' + payload, {
+            jsonpCallback: 'callback',
+            jsonpCallbackFunction: 'miaov123'
+        }).then( response => {
+            return response.json();
+        } ).then( data => {
+            // this.pages = Math.ceil(data.total / this.prepage);
+            // this.result = data;
+            // state.root.books=data;
+            // console.log(data)
+            context.commit(types.GET_BOOKS, data)
+
+        } )
 
     }
 
