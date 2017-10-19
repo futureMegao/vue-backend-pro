@@ -1,7 +1,6 @@
 // 公共 action
 import * as types from './types'
 import axios from 'axios'
-// import 'fetch-jsonp'
 import fetchJsonp from 'fetch-jsonp'
 export default {
 

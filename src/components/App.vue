@@ -1,5 +1,5 @@
 <template>
-    <div id="app clearFix">
+    <div id="app" class="clearFix">
         <div class="header"></div>
         <!--左侧菜单-->
         <left-bar class="clearFix"></left-bar>

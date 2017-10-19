@@ -134,5 +134,69 @@
   height:442px;
   overflow:hidden;
 }
+.nav-logo {
+  width:145px;
+  height:56px;
+  color:#1c8de0;
+  float:left;
+  font-size:25px ;
+}
+.nav-input {
+  float:left;
+  width:500px;
+}
+.nav-primary {
+  width:85%;
+  height:74px;
+  margin:0 auto;
+  padding:10px 0 5px;
+}
+.nav-items {
+  width:85%;
+  margin:0 auto;
+  padding:10px 0 5px;
+}
+.book-author {
+  font:13px/1.7 solid ;
+  color:#999;
+  /*white-space: nowrap;*/
+  /*text-overflow: ellipsis;*/
+  /*overflow: hidden;*/
+  /*width:300px;*/
+}
+.book-rating {
+  font:14px/1.4 solid;
+  color:#666;
+}
+ .book-rating-raters {
+  color:#e09015;
+}
+ .book-content-img {
+   margin-right:15px;
+   float:left;
+ }
+.book-content-img img{
+  width:65px;
+  height:97px;
+}
+.book-content-introduce {
+  float:left;
+  width:300px;
+  height:97px;
+  /*margin-right:100px;*/
+}
+.book-content {
+  width:85%;
+  margin:0 auto;
+}
+.book-content-con {
+  padding:20px;
+  float:left;
+  width:420px;
+}
+.book-content-introduce a {
+  text-decoration:none;
+  color:#37a;
+}
 
 
