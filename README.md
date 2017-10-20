@@ -19,3 +19,7 @@ npm run build --report
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+
+#图书搜索：
+  数据获取是使用Fetch JSONP 实现的 
