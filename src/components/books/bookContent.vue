@@ -10,7 +10,8 @@
                         placeholder="请输入书名"
                         icon="search"
                         v-model="keyword"
-                        :on-icon-click="search">
+                        :on-icon-click="search"
+                        >
                 </el-input>
             </div>
 
@@ -81,11 +82,13 @@
             }),
             search(){
                 this.getBooks(this.keyword);
+            },
+            alerts(){
+                alert(1)
             }
         },
         watch:{
             books(){
-                alert(1)
             }
         },
         created(){
