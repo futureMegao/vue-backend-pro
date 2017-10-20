@@ -6,6 +6,8 @@ const user = r => require.ensure([], () => r(require('../components/user/Index.v
 
 const accountManagement = r => require.ensure([], () => r(require('../components/accountManage/accountManagement.vue')), 'accountManagement');
 
+const admin = r => require.ensure([], () => r(require('../components/admin/admin.vue')), 'admin');
+
 const accountManagements = r => require.ensure([], () => r(require('../components/accountManage/index.vue')), 'accountManagements');
 
 const intro = r => require.ensure([], () => r(require('../components/intro/Index.vue')), 'intro');
@@ -23,7 +25,8 @@ Vue.use(Router)
 
 export default new Router({
     routes : [
-        {path : '/', name : '简述', redirect : '/intro'}, // 默认路由
+        {path:'/',name:'登录',redirect:'/admin'},//默认路由
+        {path : '/', name : '登录', component : admin}, // 默认路由
         {path : '/intro', name : '简述', component : intro},
         {
             path : '/accountManagements',

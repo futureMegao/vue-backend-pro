@@ -1,14 +1,17 @@
 <template>
     <div id="app" class="clearFix">
-        <div class="header"></div>
-        <!--左侧菜单-->
-        <left-bar class="clearFix left-bar"></left-bar>
 
-        <!--右侧banner-->
-        <div  class="right-bar">
-            <right-banner></right-banner>
+        <div>
+            <div class="header"></div>
+            <!--左侧菜单-->
+            <left-bar class="clearFix left-bar"></left-bar>
 
-            <router-view></router-view>
+            <!--右侧banner-->
+            <div  class="right-bar">
+                <right-banner></right-banner>
+
+                <router-view></router-view>
+            </div>
         </div>
     </div>
 </template>

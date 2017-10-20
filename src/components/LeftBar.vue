@@ -34,12 +34,12 @@
 
 
 
-            <el-menu-item index="3"><i class="el-icon-date"></i>图表</el-menu-item>
-            <el-menu-item index="3"><i class="el-icon-menu"></i>综合实例</el-menu-item>
-            <el-menu-item index="3"><i class="el-icon-warning"></i>错误页面</el-menu-item>
-            <el-menu-item index="3"><i class="el-icon-edit"></i>错误日志</el-menu-item>
-            <el-menu-item index="3"><i class="el-icon-document"></i>excel</el-menu-item>
-            <el-menu-item index="3"><i class="el-icon-search"></i>换肤</el-menu-item>
+            <!--<el-menu-item index="3"><i class="el-icon-date"></i>图表</el-menu-item>-->
+            <!--<el-menu-item index="3"><i class="el-icon-menu"></i>综合实例</el-menu-item>-->
+            <!--<el-menu-item index="3"><i class="el-icon-warning"></i>错误页面</el-menu-item>-->
+            <!--<el-menu-item index="3"><i class="el-icon-edit"></i>错误日志</el-menu-item>-->
+            <!--<el-menu-item index="3"><i class="el-icon-document"></i>excel</el-menu-item>-->
+            <!--<el-menu-item index="3"><i class="el-icon-search"></i>换肤</el-menu-item>-->
 
 
 

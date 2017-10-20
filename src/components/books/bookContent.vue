@@ -54,6 +54,8 @@
                         <span class="book-rating-raters">({{book.rating.numRaters}}人评价)</span>
                     </div>
                     <div class="book-author">{{book.author[0]}}/{{book.publisher}}/{{book.pubdate}}/{{book.price}}</div>
+                    <el-button type="success" v-if="isfav" @click="fav(book)">收藏</el-button>
+                    <el-button type="success" v-if="!isfav" @click="cancelfav(book)">取消收藏</el-button>
                 </div>
             </div>
         </div>
@@ -68,7 +70,9 @@
         data(){
             return {
                 keyword:'',
-                rate:'7'
+                rate:'7',
+                favs:[],
+                isfav:true
             }
         },
         computed:{
@@ -83,8 +87,16 @@
             search(){
                 this.getBooks(this.keyword);
             },
-            alerts(){
-                alert(1)
+            fav(book){
+                this.favs.push(book)
+                this.favs=[...new Set(this.favs)]//把push之后的值进行去重
+                localStorage.setItem('favs',JSON.stringify(this.favs))
+//                this.isfav=false
+            },
+            cancelfav(book){
+                var cancelfav=this.favs.findIndex(x=>x===book)
+                this.favs.splice(cancelfav,1)
+                this.isfav=true
             }
         },
         watch:{
@@ -92,6 +104,7 @@
             }
         },
         created(){
+            
         }
 
     }
