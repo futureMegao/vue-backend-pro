@@ -85,11 +85,10 @@
         },
         watch:{
             books(){
-//                console.log(this.books)
+                alert(1)
             }
         },
         created(){
-//            console.log(this.books)
         }
 
     }
