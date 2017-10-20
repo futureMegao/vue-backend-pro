@@ -2,7 +2,7 @@
     <div id="app" class="clearFix">
         <div class="header"></div>
         <!--左侧菜单-->
-        <left-bar class="clearFix"></left-bar>
+        <left-bar class="clearFix left-bar"></left-bar>
 
         <!--右侧banner-->
         <div  class="right-bar">

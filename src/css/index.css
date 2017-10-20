@@ -2,7 +2,19 @@
   padding:0;
   margin:0;
 }
-
+#app {
+  position:static;
+}
+.left-bar {
+  position:fixed;
+  overflow:auto;
+}
+::-webkit-scrollbar{
+  width:0px;
+}
+.right-bar {
+  /*position:fixed;*/
+}
 /*
 .header{
   width:100%;
@@ -19,7 +31,8 @@
 }
 .right-bar {
   width:85%;
-  float:left;
+  float:right;
+  
 }
 .right-banner{
   width:100%;
@@ -197,6 +210,9 @@
 .book-content-introduce a {
   text-decoration:none;
   color:#37a;
+}
+.book-rating-col {
+  color:red;
 }
 
 

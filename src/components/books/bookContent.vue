@@ -39,17 +39,17 @@
                     <div>
                         <a :href="book.alt">{{book.title}}</a>
                     </div>
-                    <div class="book-rating">{{book.rating.average}}
-                        <span>
-                        <el-rate
-                                v-model="book.rating.average"
-                                disabled
-                                show-text
-                                :max="10"
-                                text-color="#ff9900"
-                                text-template="{value}">
-                        </el-rate>
-                    </span>
+                    <div class="book-rating">豆瓣评分：<span class="book-rating-col">{{book.rating.average}}</span>分
+                        <!--<span>-->
+                        <!--<el-rate-->
+                                <!--v-model="book.rating.average"-->
+                                <!--disabled-->
+                                <!--show-text-->
+                                <!--:max="5"-->
+                                <!--text-color="#ff9900"-->
+                                <!--text-template="{value}">-->
+                        <!--</el-rate>-->
+                    <!--</span>-->
                         <span class="book-rating-raters">({{book.rating.numRaters}}人评价)</span>
                     </div>
                     <div class="book-author">{{book.author[0]}}/{{book.publisher}}/{{book.pubdate}}/{{book.price}}</div>
