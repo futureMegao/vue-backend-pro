@@ -13,6 +13,20 @@
                 <router-view></router-view>
             </div>
         </div>
+        <div class="mask">
+            <div class="login" >
+                <div class="ivu-card">
+                    <div class="ivu-card-head">
+                        <p>>欢迎登录</p>
+                    </div>
+                    <div class="ivu-card-body">
+                        <div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -63,6 +77,14 @@
 
                     // 设置历史记录
                     this.addHistoryTab(crumbs[crumbs.length - 1])
+                }
+            }
+        },
+        directives:{
+            mask:{
+                inserted:function(el){
+                    console.log(el,window.screen.height)
+                    el.style.height= window.screen.height+"px"
                 }
             }
         }
