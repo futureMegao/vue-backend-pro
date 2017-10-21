@@ -10,7 +10,7 @@
   overflow:auto;
 }
 ::-webkit-scrollbar{
-  width:0px;
+  /*width:0px;*/
 }
 .right-bar {
   /*position:fixed;*/
@@ -163,6 +163,7 @@
   height:74px;
   margin:0 auto;
   padding:10px 0 10px;
+  position:relative;
 }
 .nav-items {
   width:85%;
@@ -214,5 +215,23 @@
 .book-rating-col {
   color:red;
 }
-
+.book-favorite {
+  width:100%;
+  background-color:#20a0ff;
+  height:50px;
+  border-radius:10px;
+  color:#fff;
+  text-indent:50px;
+  line-height:50px;
+  font-size:20px;
+}
+.ismoving {
+  text-indent:100px;
+}
+.book-pagination {
+  /*position:absolute;*/
+  /*left:200px;*/
+  /*top:1650px;*/
+  margin:20px 0 20px 200px;
+}
 

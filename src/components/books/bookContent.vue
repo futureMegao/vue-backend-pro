@@ -9,7 +9,7 @@
                 <el-input
                         placeholder="请输入书名"
                         icon="search"
-                        v-model="keyword"
+                        v-model="prepage.keyword"
                         :on-icon-click="search"
                         >
                 </el-input>
@@ -22,16 +22,8 @@
             <el-button type="primary" size="small" @click="favorite">收藏夹</el-button>
             <el-button type="primary" size="small">购物车</el-button>
         </div>
+        <h2 v-show="ismoving" class="ismoving">你搜索的是 “{{prepage.keyword}}”，一共搜索到了 {{books.total}} 条记录</h2>
         <div class="book-content clearFix">
-            <ul>
-                <!--<li v-for="book in books.books">-->
-                    <!--<img :src="book.image" alt="">-->
-                    <!--<div style="display: inline-block">-->
-                        <!--<h2>{{book.title}}</h2>-->
-                    <!--</div>-->
-                <!--</li>-->
-
-            </ul>
             <div  v-for="(book,index) in books.books" class="book-content-con clearFix">
                 <div class="book-content-img">
                     <img :src="book.image" alt="">
@@ -59,7 +51,19 @@
                 </div>
             </div>
         </div>
-
+        <!--分页-->
+        <div class="book-pagination" v-if="ispagination">
+            <el-pagination
+                    @size-change="handleSizeChange"
+                    @current-change="handleCurrentChange"
+                    :current-page="1"
+                    :page-sizes="[10, 20, 30, 40]"
+                    :page-size="10"
+                    layout="total, sizes, prev, pager, next, jumper"
+                    :total="total"
+            >
+            </el-pagination>
+        </div>
     </div>
 </template>
 <script>
@@ -69,10 +73,17 @@
         name:'bookContent',
         data(){
             return {
-                keyword:'',
+                prepage:{
+                    pages:10,
+                    keyword:''
+                },
                 rate:'7',
                 favs:[],
-                isfav:-1
+                isfav:-1,
+                ismoving:false,
+                ispagination:false,
+                total:0,
+                paginationIndex:0
             }
         },
         computed:{
@@ -84,8 +95,18 @@
             ...mapActions({
                 getBooks:'getBooks'
             }),
+            handleSizeChange(val) {
+//                console.log(`每页 ${val} 条`);
+            },
+            //分页操作
+            handleCurrentChange(val) {
+                this.prepage.pages=val
+                this.getBooks(this.prepage)
+            },
             search(){
-                this.getBooks(this.keyword);
+                this.getBooks(this.prepage)
+                this.ismoving=true
+//                this.total=this.books.total
             },
             fav(book,index){
                 this.favs.push(book)
@@ -103,8 +124,9 @@
             }
         },
         watch:{
-            isfav(){
-//                this.isfav=0
+            books(){
+                this.ispagination=true
+                this.total=this.books.total
             }
         },
         created(){

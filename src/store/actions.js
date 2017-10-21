@@ -59,18 +59,14 @@ export default {
         //     console.log(res);
         //     context.commit(types.GET_BOOKS, res)
         // })
-        fetchJsonp('https://api.douban.com/v2/book/search?q=' + payload, {
+        console.log(payload)
+        fetchJsonp('https://api.douban.com/v2/book/search?q=' + payload.keyword + '&start=' + (payload.pages - 1) * 20, {
             jsonpCallback: 'callback',
-            jsonpCallbackFunction: 'ziyong'
+            jsonpCallbackFunction: 'gao'
         }).then( response => {
             return response.json();
         } ).then( data => {
-            // this.pages = Math.ceil(data.total / this.prepage);
-            // this.result = data;
-            // state.root.books=data;
-            // console.log(data)
             context.commit(types.GET_BOOKS, data)
-
         } )
 
     }

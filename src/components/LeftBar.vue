@@ -25,7 +25,7 @@
                 <el-submenu index="2-1">
                     <template slot="title">图书</template>
                     <el-menu-item index="/books/bookContent">图书主界面</el-menu-item>
-                    <el-menu-item index="/books/index">图书主界</el-menu-item>
+                    <el-menu-item index="/books/bookFavorite">图书收藏夹</el-menu-item>
 
                 </el-submenu>
 

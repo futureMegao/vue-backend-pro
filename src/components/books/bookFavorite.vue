@@ -1,6 +1,6 @@
 <template>
     <div>
-        我是图书收藏夹
+        <div class="book-favorite"> 图书收藏夹</div>
         <div class="book-content clearFix">
             <div  v-for="(book,index) in favs" class="book-content-con clearFix">
                 <div class="book-content-img">
