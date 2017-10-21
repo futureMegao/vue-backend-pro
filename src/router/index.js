@@ -21,6 +21,8 @@ const books = r => require.ensure([], () => r(require('../components/books/index
 
 const bookContent = r => require.ensure([], () => r(require('../components/books/bookContent.vue')), 'bookContent');
 
+const bookFavorite = r => require.ensure([], () => r(require('../components/books/bookFavorite.vue')), 'bookFavorite');
+
 Vue.use(Router)
 
 export default new Router({
@@ -45,6 +47,7 @@ export default new Router({
             component:books,
             children:[
                 {path : 'bookContent', component :bookContent, name : '图书主界面'},
+                {path : 'bookFavorite', component :bookFavorite, name : '图书收藏夹'}
             ]
         },
         {

@@ -19,7 +19,7 @@
         <hr/>
         <div class="nav-items">
             <el-button type="primary" size="small">已读</el-button>
-            <el-button type="primary" size="small">收藏夹</el-button>
+            <el-button type="primary" size="small" @click="favorite">收藏夹</el-button>
             <el-button type="primary" size="small">购物车</el-button>
         </div>
         <div class="book-content clearFix">
@@ -32,13 +32,13 @@
                 <!--</li>-->
 
             </ul>
-            <div  v-for="book in books.books" class="book-content-con clearFix">
+            <div  v-for="(book,index) in books.books" class="book-content-con clearFix">
                 <div class="book-content-img">
                     <img :src="book.image" alt="">
                 </div>
                 <div class="book-content-introduce">
                     <div>
-                        <a :href="book.alt">{{book.title}}</a>
+                        <a :href="book.alt">{{book.title}}{{index}}</a>
                     </div>
                     <div class="book-rating">豆瓣评分：<span class="book-rating-col">{{book.rating.average}}</span>分
                         <!--<span>-->
@@ -54,8 +54,8 @@
                         <span class="book-rating-raters">({{book.rating.numRaters}}人评价)</span>
                     </div>
                     <div class="book-author">{{book.author[0]}}/{{book.publisher}}/{{book.pubdate}}/{{book.price}}</div>
-                    <el-button type="success" v-if="isfav" @click="fav(book)">收藏</el-button>
-                    <el-button type="success" v-if="!isfav" @click="cancelfav(book)">取消收藏</el-button>
+                    <el-button type="success" v-if="isfav!==index" @click="fav(book,index)">收藏</el-button>
+                    <el-button v-else type="success" @click="cancelfav(book,index)">取消收藏</el-button>
                 </div>
             </div>
         </div>
@@ -72,7 +72,7 @@
                 keyword:'',
                 rate:'7',
                 favs:[],
-                isfav:true
+                isfav:-1
             }
         },
         computed:{
@@ -87,24 +87,27 @@
             search(){
                 this.getBooks(this.keyword);
             },
-            fav(book){
+            fav(book,index){
                 this.favs.push(book)
                 this.favs=[...new Set(this.favs)]//把push之后的值进行去重
                 localStorage.setItem('favs',JSON.stringify(this.favs))
-//                this.isfav=false
+                this.isfav=index
             },
-            cancelfav(book){
-                var cancelfav=this.favs.findIndex(x=>x===book)
-                this.favs.splice(cancelfav,1)
-                this.isfav=true
+            cancelfav(book,index){
+//                var cancelfav=this.favs.findIndex(x=>x===book)
+//                this.favs.splice(cancelfav,1)
+//                this.isfav=-1
+            },
+            favorite(){
+                this.$router.push({path:'/books/bookFavorite'})
             }
         },
         watch:{
-            books(){
+            isfav(){
+//                this.isfav=0
             }
         },
         created(){
-            
         }
 
     }
