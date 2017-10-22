@@ -8,12 +8,14 @@ import 'fetch-jsonp'
 
 import './css/index.css'
 import './css/custome.css'
+import CollapseTransition from 'element-ui/lib/transitions/collapse-transition'
 
-
-import {Menu, Submenu, MenuItem, MenuItemGroup, Breadcrumb, BreadcrumbItem,Tag,radioButton,radioGroup,tooltip,tableColumn,table,button,input,radio,alert,dropdown,col,dropdownMenu,dropdownItem,option,select,datePicker,formItem,form,timePicker,dialog,pagination,rate} from 'element-ui'
+import {Menu, Submenu, MenuItem, MenuItemGroup, Breadcrumb, BreadcrumbItem,Tag,radioButton,radioGroup,tooltip,tableColumn,table,button,input,radio,alert,dropdown,col,dropdownMenu,dropdownItem,option,select,datePicker,formItem,form,timePicker,dialog,pagination,rate
+} from 'element-ui'
 
 Vue.component(Menu.name, Menu)
 Vue.component(rate.name, rate)
+// Vue.component(collapseTransition.name, collapseTransition)
 Vue.component(pagination.name, pagination)
 Vue.component(Submenu.name, Submenu)
 Vue.component(MenuItem.name, MenuItem)
@@ -53,7 +55,8 @@ Vue.component(dialog.name, dialog)
 
 
 import store from './store/index.js'
-
+import vueCookie from 'vue-cookie'
+import fetchJsonp from 'fetch-jsonp'
 import axios from 'axios'
 Vue.prototype.$ajax = axios
 

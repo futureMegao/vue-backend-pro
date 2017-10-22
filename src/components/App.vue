@@ -13,7 +13,8 @@
                 <router-view></router-view>
             </div>
         </div>
-        <div class="mask">
+        <transition name="fade">
+            <div class="mask" v-if="isShow">
             <div class="login" >
                 <div class="ivu-card">
                     <div class="ivu-card-head">
@@ -21,12 +22,42 @@
                     </div>
                     <div class="ivu-card-body">
                         <div>
-                            
+                            <el-form :model="dynamicValidateForm" ref="dynamicValidateForm" label-width="100px" class="demo-dynamic ivu-input-form">
+                                <el-form-item
+                                        prop="email"
+                                        label="账号"
+                                        :rules="[
+      { required: true, message: '账号不能为空', trigger: 'blur' }
+    ]"
+                                >
+                                    <el-input v-model="dynamicValidateForm.email" class="ivu-input-type"></el-input>
+                                </el-form-item>
+
+
+                                <el-form-item
+                                        v-for="(domain, index) in dynamicValidateForm.domains"
+                                        :label="'密码'"
+                                        :key="domain.key"
+                                        :prop="'domains.' + index + '.value'"
+                                        :rules="{
+      required: true, message: '密码不能为空', trigger: 'blur'
+    }"
+                                >
+                                    <el-input v-model="domain.value" class="ivu-input-type"></el-input>
+                                </el-form-item>
+
+
+                                <el-form-item>
+                                    <el-button type="primary" @click="submitForm(dynamicValidateForm)" class="ivu-input-button" :loading="logining">提交</el-button>
+                                </el-form-item>
+                            </el-form>
                         </div>
                     </div>
+                    <p class="login-tip">输入任意用户名和密码即可</p>
                 </div>
             </div>
         </div>
+        </transition>
     </div>
 </template>
 
@@ -36,12 +67,25 @@
 
     import leftBar from './LeftBar.vue'
     import rightBanner from './RightBanner.vue'
-
+    import axios from 'axios'
+    import vueCookie from 'vue-cookie'
     export default {
         name : 'app',
         components : {leftBar, rightBanner},
         data(){
-            return {}
+            return {
+                dynamicValidateForm: {
+                    domains: [{
+                        value: ''
+                    }],
+                    email: ''
+                },
+                logining: false,
+                isShow:true
+            }
+        },
+        computed:{
+
         },
         methods : {
             ...mapActions({
@@ -57,10 +101,28 @@
 
                     this.setHistoryTabs(tabInfo);
                 }
-            }
+            },
 
+            submitForm(formName) {
+                if(!formName.email){
+                    alert("请输入账号")
+                }else if(!formName.domains[0].value){
+                    alert("请输入密码")
+                }else if (formName.email && formName.domains[0].value){
+                    vueCookie.set("test",formName.email, 1)
+                    vueCookie.set("password",formName.domains[0].value, 1)
+                    var test= vueCookie.get("test")
+                    var password= vueCookie.get("password")
+                    if(test && password){
+                        console.log(test,password)
+                            this.isShow=false
+                            this.$router.push({path:'/intro'})
+                    }
+                }
+
+            }
         },
-        watch : {
+        watch :{
 
             $route(to, from){
                 let crumbs = [];
@@ -78,7 +140,7 @@
                     // 设置历史记录
                     this.addHistoryTab(crumbs[crumbs.length - 1])
                 }
-            }
+            },
         },
         directives:{
             mask:{

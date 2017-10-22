@@ -264,3 +264,24 @@
   font-weight:700;
   text-indent:15px;
 }
+.ivu-input-type {
+  width:200px;
+}
+.ivu-input-form {
+  margin-left:-30px;
+  padding-top:30px;
+}
+.ivu-input-button {
+  width:200px;
+}
+.login-tip {
+  font-size:10px;
+  color:#c3c3c3;
+  text-align:center;
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 1.5s
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active in below version 2.1.8 */ {
+  opacity: 0
+}
