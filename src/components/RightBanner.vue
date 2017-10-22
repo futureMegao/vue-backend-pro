@@ -17,10 +17,10 @@
                </el-tag>
            </div>
            <div class="user-dropdown-menu-con">
-               <el-col :span="12">
+               <el-col :span="12" class="test">
                    <el-dropdown trigger="click">
       <span class="el-dropdown-link">
-        下拉菜单<i class="el-icon-caret-bottom el-icon--right"></i>
+        {{test}}<i class="el-icon-caret-bottom el-icon--right"></i>
       </span>
                        <el-dropdown-menu slot="dropdown">
                            <el-dropdown-item>个人中心</el-dropdown-item>
@@ -28,7 +28,9 @@
                        </el-dropdown-menu>
                    </el-dropdown>
                </el-col>
-
+                <span class="ivu-avatar">
+                    <img src=".././images/img.jpg"/>
+                </span>
            </div>
        </div>
 
@@ -38,16 +40,23 @@
 <script>
 
     import {mapState, mapActions} from 'vuex'
-
+    import vueCookie from 'vue-cookie'
     export default{
         name : 'right-banner',
-
+        data(){
+          return {
+          }
+        },
         computed : {
 
             ...mapState({
                 crumbsInfo : state => state.root.crumbsInfo,
                 historyTabs : state => state.root.historyTabs,
-            })
+            }),
+            test(){
+                var test= vueCookie.get("test")
+                return test
+            }
         },
 
         methods : {
