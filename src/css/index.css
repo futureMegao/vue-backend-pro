@@ -285,3 +285,12 @@
 .fade-enter, .fade-leave-to /* .fade-leave-active in below version 2.1.8 */ {
   opacity: 0
 }
+.user-dropdown-menu-con {
+  /*float:right;*/
+  position:absolute;
+  right:20px;
+  top:10px;
+  width:150px;
+  height:30px;
+  color:orangered;
+}

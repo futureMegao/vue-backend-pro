@@ -16,8 +16,19 @@
                    {{item.name}}
                </el-tag>
            </div>
-           <div class="">
-               账号
+           <div class="user-dropdown-menu-con">
+               <el-col :span="12">
+                   <el-dropdown trigger="click">
+      <span class="el-dropdown-link">
+        下拉菜单<i class="el-icon-caret-bottom el-icon--right"></i>
+      </span>
+                       <el-dropdown-menu slot="dropdown">
+                           <el-dropdown-item>个人中心</el-dropdown-item>
+                           <el-dropdown-item>退出登录</el-dropdown-item>
+                       </el-dropdown-menu>
+                   </el-dropdown>
+               </el-col>
+
            </div>
        </div>
 
