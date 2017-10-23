@@ -1,2 +1,0 @@
-webpackJsonp([2],{"9tsQ":function(e,n,t){"use strict";Object.defineProperty(n,"__esModule",{value:!0});var r=t("FRJ3"),s=t("GFiq"),a=t("VU/8"),u=a(r.a,s.a,null,null,null);n.default=u.exports},FRJ3:function(e,n,t){"use strict";n.a={name:"personageCenter"}},GFiq:function(e,n,t){"use strict";var r=function(){var e=this,n=e.$createElement;return(e._self._c||n)("div",[e._v("\n    我是个人中心\n")])},s=[],a={render:r,staticRenderFns:s};n.a=a}});
-//# sourceMappingURL=2.7f3e4750c4fb333c051d.js.map
