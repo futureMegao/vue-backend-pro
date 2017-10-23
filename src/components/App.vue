@@ -15,6 +15,7 @@
         </div>
         <transition name="fade">
             <div class="mask" v-if="isShow">
+             <img src="../images/login_bg.jpg"/>
             <div class="login" >
                 <div class="ivu-card">
                     <div class="ivu-card-head">
