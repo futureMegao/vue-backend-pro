@@ -2,6 +2,7 @@
 import * as types from './types'
 import axios from 'axios'
 import fetchJsonp from 'fetch-jsonp'
+import vueCookie from 'vue-cookie'
 export default {
 
     // 设置历史记录 tabs
@@ -68,6 +69,21 @@ export default {
         } ).then( data => {
             context.commit(types.GET_BOOKS, data)
         } )
+
+    },
+    //用户登录数据
+    getPersonage:function(context,payload){
+        var test= vueCookie.get("test")
+        var password= vueCookie.get("password")
+        var pay=[{
+            test:test,
+            password:password
+        }]
+        console.log(pay)
+        if(test && password){
+            console.log(test,password)
+            context.commit(types.GET_PERSONAGE,pay)
+        }
 
     }
 

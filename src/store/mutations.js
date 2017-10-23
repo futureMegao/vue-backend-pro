@@ -96,8 +96,11 @@ export default {
         // if(Array.isArray(state.root.books)){
             state.root.books = payload;
         // }
-
-
+    },
+    //登录状态数据
+    [types.GET_PERSONAGE](state,payload){
+            state.root.personage.push(payload)
     }
+
 }
 

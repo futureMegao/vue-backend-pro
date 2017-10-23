@@ -20,3 +20,5 @@ export const ALTER_ACCOUNT='alterAccount'
 export const SEARCH_ACCOUNT_MANAGEMENT='searchAccountManagement'
 //获取图书主数据
 export const GET_BOOKS='getBooks'
+//操作用户登录数据
+export const GET_PERSONAGE='getPersonage'

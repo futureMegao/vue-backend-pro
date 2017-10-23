@@ -24,8 +24,8 @@
         {{test}}<i class="el-icon-caret-bottom el-icon--right"></i>
       </span>
                        <el-dropdown-menu slot="dropdown">
-                           <el-dropdown-item ><span @click="personage">个人中心</span></el-dropdown-item>
-                           <el-dropdown-item>退出登录</el-dropdown-item>
+                           <el-dropdown-item ><span @click="personages">个人中心</span></el-dropdown-item>
+                           <el-dropdown-item><span @click="logOut">退出登录</span></el-dropdown-item>
                        </el-dropdown-menu>
                    </el-dropdown>
                </el-col>
@@ -46,7 +46,7 @@
         name : 'right-banner',
         data(){
           return {
-              test:null
+              test:'admin'
           }
         },
         computed : {
@@ -54,16 +54,19 @@
             ...mapState({
                 crumbsInfo : state => state.root.crumbsInfo,
                 historyTabs : state => state.root.historyTabs,
+                personage : state => state.root.personage
             }),
 //            test(){
 //                var test= vueCookie.get("test")
 //                return test
+//                return this.personage.password
 //            }
         },
 
         methods : {
             ...mapActions({
-                deleteHistoryTabs:'deleteHistoryTabs'
+                deleteHistoryTabs:'deleteHistoryTabs',
+                getPersonage:'getPersonage'
             }),
             linkTo(path){
                 this.$router.replace({path : path});
@@ -72,16 +75,18 @@
             handleClose(item){
                 this.deleteHistoryTabs(item)
             },
-            personage(){
+            personages(){
                 this.$router.push({path:'/personage/personageCenter'});
+            },
+            logOut(){
+                vueCookie.delete("test")
+                vueCookie.delete("password")
+                this.$router.push({path:'/admin'})
             }
 
         },
         created(){
             this.test= vueCookie.get("test")
-            console.log(55)
-            console.log(this.test)
-//            return test
         },
         watch:{
 

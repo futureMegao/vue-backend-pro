@@ -79,7 +79,7 @@
                     domains: [{
                         value: ''
                     }],
-                    email: ''
+                    email: 'admin'
                 },
                 logining: false,
                 isShow:true,
@@ -95,12 +95,16 @@
                 }else{
                     return this.isShow =true
                 }
-            }
+            },
+            ...mapState({
+                personage : state => state.root.personage,
+            }),
         },
         methods : {
             ...mapActions({
                 setCrumbsInfo : 'setCrumbsInfo',
-                setHistoryTabs : 'setHistoryTabs'
+                setHistoryTabs : 'setHistoryTabs',
+                getPersonage:'getPersonage'
             }),
 
             // 添加历史记录
@@ -124,9 +128,10 @@
                     var test= vueCookie.get("test")
                     var password= vueCookie.get("password")
                     if(test && password){
-                        console.log(test,password)
+//                        console.log(test,password)
 //                            this.isShow=false
                             this.$router.push({path:'/intro'})
+                            this.getPersonage()
 //                            this.isShow
                     }
                 }
@@ -156,7 +161,7 @@
                 }
 
                 var test= vueCookie.get("test")
-                console.log(test)
+//                console.log(test)
                 if(test){
                     return this.isShow =false
                     console.log(1)

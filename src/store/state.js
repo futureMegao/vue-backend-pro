@@ -266,6 +266,8 @@ export default {
             }
         ],
         //图书主数据
-        books:[]
+        books:[],
+        //用户登录状态数据
+        personage:[]
     }
 }
