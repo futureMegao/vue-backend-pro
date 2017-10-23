@@ -20,6 +20,7 @@
                <el-col :span="12" class="test">
                    <el-dropdown trigger="click">
       <span class="el-dropdown-link">
+          <span v-model="test"></span>
         {{test}}<i class="el-icon-caret-bottom el-icon--right"></i>
       </span>
                        <el-dropdown-menu slot="dropdown">
@@ -45,6 +46,7 @@
         name : 'right-banner',
         data(){
           return {
+              test:null
           }
         },
         computed : {
@@ -53,10 +55,10 @@
                 crumbsInfo : state => state.root.crumbsInfo,
                 historyTabs : state => state.root.historyTabs,
             }),
-            test(){
-                var test= vueCookie.get("test")
-                return test
-            }
+//            test(){
+//                var test= vueCookie.get("test")
+//                return test
+//            }
         },
 
         methods : {
@@ -71,10 +73,15 @@
                 this.deleteHistoryTabs(item)
             },
             personage(){
-                alert(1)
                 this.$router.push({path:'/personage/personageCenter'});
             }
 
+        },
+        created(){
+            this.test= vueCookie.get("test")
+            console.log(55)
+            console.log(this.test)
+//            return test
         },
         watch:{
 

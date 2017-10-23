@@ -318,3 +318,22 @@
   position:absolute;
   top:-7px;
 }
+.personage {
+  width:1129px;
+  height:399px;
+  margin:10px;
+  background-color:#eeeeee;
+  border-radius:13px;
+}
+.card-head {
+  font-size:13px;
+  line-height:30px;
+  text-indent:30px;
+  border-bottom:1px solid #1f2d3d;
+}
+.card-message p {
+  font-size:12px;
+  margin:10px 0;
+  line-height:25px;
+  text-indent:30px;
+}

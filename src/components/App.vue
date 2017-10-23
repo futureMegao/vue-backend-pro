@@ -15,7 +15,7 @@
         </div>
         <transition name="fade">
             <div class="mask" v-if="isShow">
-             <img src="../images/login_bg.jpg"/>
+             <img src="../images/login_bg1.jpg"/>
             <div class="login" >
                 <div class="ivu-card">
                     <div class="ivu-card-head">
@@ -44,7 +44,7 @@
       required: true, message: '密码不能为空', trigger: 'blur'
     }"
                                 >
-                                    <el-input v-model="domain.value" class="ivu-input-type"></el-input>
+                                    <el-input v-model="domain.value" class="ivu-input-type" ></el-input>
                                 </el-form-item>
 
 
@@ -82,7 +82,7 @@
                     email: ''
                 },
                 logining: false,
-//                isShow:null,
+                isShow:true,
             }
         },
         computed:{
@@ -133,6 +133,9 @@
 
             }
         },
+        mounted(){
+//            this.submitForm(formName)
+        },
         watch :{
 
             $route(to, from){
@@ -151,8 +154,16 @@
                     // 设置历史记录
                     this.addHistoryTab(crumbs[crumbs.length - 1])
                 }
-            },
 
+                var test= vueCookie.get("test")
+                console.log(test)
+                if(test){
+                    return this.isShow =false
+                    console.log(1)
+                }else{
+                    return this.isShow =true
+                }
+            },
         },
         directives:{
             mask:{

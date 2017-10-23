@@ -4,9 +4,9 @@
         <div class="accountMangement-nav clearFix">
             <div class="accountMangement-nav-left">
                 <el-button type="primary" icon="edit" @click="addAccount">添加</el-button>
-                <el-button type="primary" icon="share">启用</el-button>
-                <el-button type="primary" icon="delete">禁用</el-button>
-                <el-button type="primary" icon="search">删除</el-button>
+                <!--<el-button type="primary" icon="share">启用</el-button>-->
+                <!--<el-button type="primary" icon="delete">禁用</el-button>-->
+                <!--<el-button type="primary" icon="search">删除</el-button>-->
                 <!--<el-button type="primary">上传<i class="el-icon-upload el-icon&#45;&#45;right"></i></el-button>-->
             </div>
             <div class="accountMangement-nav-right">

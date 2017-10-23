@@ -33,21 +33,11 @@
                         <a :href="book.alt">{{book.title}}{{index}}</a>
                     </div>
                     <div class="book-rating">豆瓣评分：<span class="book-rating-col">{{book.rating.average}}</span>分
-                        <!--<span>-->
-                        <!--<el-rate-->
-                                <!--v-model="book.rating.average"-->
-                                <!--disabled-->
-                                <!--show-text-->
-                                <!--:max="5"-->
-                                <!--text-color="#ff9900"-->
-                                <!--text-template="{value}">-->
-                        <!--</el-rate>-->
-                    <!--</span>-->
                         <span class="book-rating-raters">({{book.rating.numRaters}}人评价)</span>
                     </div>
                     <div class="book-author">{{book.author[0]}}/{{book.publisher}}/{{book.pubdate}}/{{book.price}}</div>
-                    <el-button type="success" v-if="isfav!==index" @click="fav(book,index)">收藏</el-button>
-                    <el-button v-else type="success" @click="cancelfav(book,index)">取消收藏</el-button>
+                    <el-button type="success"  @click="fav(book,index)">收藏</el-button>
+                    <!--<el-button v-else type="success" @click="cancelfav(book,index)">取消收藏</el-button>-->
                 </div>
             </div>
         </div>
@@ -79,7 +69,7 @@
                 },
                 rate:'7',
                 favs:[],
-                isfav:-1,
+//                isfav:-1,
                 ismoving:false,
                 ispagination:false,
                 total:0,
@@ -112,7 +102,7 @@
                 this.favs.push(book)
                 this.favs=[...new Set(this.favs)]//把push之后的值进行去重
                 localStorage.setItem('favs',JSON.stringify(this.favs))
-                this.isfav=index
+//                this.isfav=index
             },
             cancelfav(book,index){
 //                var cancelfav=this.favs.findIndex(x=>x===book)
