@@ -244,7 +244,7 @@
   position:absolute;
   left:0;
   top:0;
-  background:url(.././images/login_bg.jpg) no-repeat center center;
+  background:url(../images/login_bg.jpg) no-repeat center center;
   background-size:100% auto;
   background-size:cover;
 }
