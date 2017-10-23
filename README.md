@@ -23,7 +23,8 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 
 # 介绍
 ---
-  基于vue全家桶的一个单页面应用，里面有一些乱七八糟的东西,---后续会写一些别的实用的小功能
+  基于vue全家桶+element的一个单页面应用，
+  ---后续会写一些别的实用的小功能
 # 功能
 ---
 	# table小组件
