@@ -23,6 +23,10 @@ const bookContent = r => require.ensure([], () => r(require('../components/books
 
 const bookFavorite = r => require.ensure([], () => r(require('../components/books/bookFavorite.vue')), 'bookFavorite');
 
+const personage = r => require.ensure([], () => r(require('../components/personage/index.vue')), 'personage');
+
+const personageCenter = r => require.ensure([], () => r(require('../components/personage/personageCenter.vue')), 'personageCenter');
+
 Vue.use(Router)
 
 export default new Router({
@@ -39,6 +43,14 @@ export default new Router({
                 {path : 'addAccount', component :addAccount, name : '新增账号'},
                 {path : 'roleManagement', component : roleManagement, name : '角色管理'},
                 {path : 'addRoles', component : addRoles, name : '新增角色'}
+            ]
+        },
+        {
+            path:'/personage',
+            name:'个人',
+            component:personage,
+            children:[
+                {path : 'personageCenter', component :personageCenter, name : '个人中心'}
             ]
         },
         {

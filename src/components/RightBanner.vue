@@ -23,7 +23,7 @@
         {{test}}<i class="el-icon-caret-bottom el-icon--right"></i>
       </span>
                        <el-dropdown-menu slot="dropdown">
-                           <el-dropdown-item>个人中心</el-dropdown-item>
+                           <el-dropdown-item ><span @click="personage">个人中心</span></el-dropdown-item>
                            <el-dropdown-item>退出登录</el-dropdown-item>
                        </el-dropdown-menu>
                    </el-dropdown>
@@ -69,7 +69,14 @@
             //删除历史记录tabs
             handleClose(item){
                 this.deleteHistoryTabs(item)
+            },
+            personage(){
+                alert(1)
+                this.$router.push({path:'/personage/personageCenter'});
             }
+
+        },
+        watch:{
 
         }
     }
