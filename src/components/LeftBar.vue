@@ -32,6 +32,18 @@
             </el-submenu>
 
 
+            </el-submenu>
+            <el-submenu index="3">
+                <template slot="title"><i class="el-icon-setting"></i>个人</template>
+                <el-submenu index="3-1">
+                    <template slot="title">个人中心</template>
+                    <el-menu-item index="/personage/personageCenter">个人中心</el-menu-item>
+                    <el-menu-item index="/books/bookFavorite">图书收藏夹</el-menu-item>
+
+                </el-submenu>
+
+            </el-submenu>
+
 
 
             <!--<el-menu-item index="3"><i class="el-icon-date"></i>图表</el-menu-item>-->

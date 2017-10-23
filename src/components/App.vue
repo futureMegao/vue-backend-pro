@@ -81,11 +81,20 @@
                     email: ''
                 },
                 logining: false,
-                isShow:true
+//                isShow:null,
             }
         },
         computed:{
-
+            isShow(){
+                var test= vueCookie.get("test")
+                console.log(test)
+                if(test){
+                   return this.isShow =false
+                    console.log(1)
+                }else{
+                    return this.isShow =true
+                }
+            }
         },
         methods : {
             ...mapActions({
@@ -115,8 +124,9 @@
                     var password= vueCookie.get("password")
                     if(test && password){
                         console.log(test,password)
-                            this.isShow=false
+//                            this.isShow=false
                             this.$router.push({path:'/intro'})
+//                            this.isShow
                     }
                 }
 
@@ -141,6 +151,7 @@
                     this.addHistoryTab(crumbs[crumbs.length - 1])
                 }
             },
+
         },
         directives:{
             mask:{
