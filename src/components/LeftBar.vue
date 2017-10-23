@@ -38,8 +38,6 @@
                 <el-submenu index="3-1">
                     <template slot="title">个人中心</template>
                     <el-menu-item index="/personage/personageCenter">个人中心</el-menu-item>
-                    <el-menu-item index="/books/bookFavorite">图书收藏夹</el-menu-item>
-
                 </el-submenu>
 
             </el-submenu>

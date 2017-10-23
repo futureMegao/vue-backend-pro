@@ -11,7 +11,7 @@
                        @click.native="linkTo(item.path)"
                        v-for="item in historyTabs"
                        closable class="right-banner-tag"
-                       @close="handleClose(item)"
+                       @close.stop="handleClose(item)"
                        :type="item.colorType">
                    {{item.name}}
                </el-tag>
@@ -20,7 +20,6 @@
                <el-col :span="12" class="test">
                    <el-dropdown trigger="click">
       <span class="el-dropdown-link">
-          <span v-model="test"></span>
         {{test}}<i class="el-icon-caret-bottom el-icon--right"></i>
       </span>
                        <el-dropdown-menu slot="dropdown">

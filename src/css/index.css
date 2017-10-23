@@ -337,3 +337,25 @@
   line-height:25px;
   text-indent:30px;
 }
+.intro {
+  width:820px;
+  height:450px;
+  margin:50px auto;
+  background-color:#e4e8f1;
+  border-radius:50px;
+}
+.intro p {
+  padding:50px;
+  font-size:19px;
+  line-height:30px;
+}
+.intro span {
+  color:orange;
+}
+.intro ul {
+  padding-left:50px;
+  color:blue;
+}
+.intro li{
+  list-style:none;
+}
