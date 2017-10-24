@@ -15,8 +15,6 @@
                     <template slot="title">权限管理</template>
                     <el-menu-item index="/user/index">权限管理</el-menu-item>
                     <el-menu-item index="/accountManagement/addAccount">新增权限</el-menu-item>
-                    <el-menu-item index="/user/index">权限</el-menu-item>
-                    <el-menu-item index="/user/index">权限管理</el-menu-item>
                 </el-submenu>
 
             </el-submenu>
